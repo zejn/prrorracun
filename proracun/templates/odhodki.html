@@ -1,0 +1,38 @@
+<html>
+    <head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link type="text/css" rel="stylesheet" href="proracun2010.css" />
+
+    <script type="text/javascript" src="jquery-1.4.2.js"></script>    
+    <script type="text/javascript" src="jit.js" ></script>
+    <script type="text/javascript" src="proracun_odhodki2010.js" ></script>
+    
+    <title>Vizualizacija proračuna Republike Slovenije za leto 2010: odhodki</title>
+    
+    <meta name="title" content="Vizualizacija proračuna Republike Slovenije za leto 2010: odhodki" />
+    <meta name="description" content="Kam gre naš denar? " />
+    <link rel="image_src" href="odhodki.png" / >
+    
+    
+    <script type="text/javascript">
+      $(document).ready(function() {
+        var x = $(document).width()-30+'px';
+        var y = $(document).height()-90+'px';
+        $("#infovis").css('width', x);
+        $("#infovis").css('height', y);
+        init();
+      });
+    
+    </script>
+    </head>
+
+    <body>
+      <div>
+             <div id="header">Proračun Republike Slovenije za leto 2010: <a href="index.html">prihodki</a> | odhodki</div>
+      <div>
+             <div id="infovis" />
+      </div>
+             <div id="footer">Legenda: barve nimajo posebnega pomena | Levi klik na porabnika poveča pogled, desni klik pomanjša <br /> <a href="http://www.mf.gov.si/slov/proracun/sprejet_proracun/2010/10_01_splosni_del_2010.pdf">Vir podakov</a> <a href="source/10_01_splosni_del_2010.pdf">(kopija)</a> | <a href="http://thejit.org/">JavaScript InfoVis Toolkit</a> | <a href="http://github.com/gandalfar/proracun">Izvorna koda</a> | Povezal skupaj: <a href="http://www.jurecuhalev.com/blog/">jure</a> | <a name="fb_share" type="button" href="http://www.facebook.com/sharer.php">Deli z ostalimi</a><script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script></div>
+    </body>
+</html>

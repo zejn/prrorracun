@@ -1,0 +1,40 @@
+<html>
+    <head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link type="text/css" rel="stylesheet" href="{{ MEDIA_URL }}proracun2010.css" />
+
+    <script type="text/javascript" src="{{ MEDIA_URL }}jquery-1.4.2.js"></script>    
+    <script type="text/javascript" src="{{ MEDIA_URL }}jit.js" ></script>
+    <script type="text/javascript" src="{{ js_vizualizacija_url }}" ></script>
+    
+    <title>Vizualizacija proračuna Republike Slovenije za leto {{ leto }}: {{ po }}</title>
+    
+    <meta name="title" content="Vizualizacija proračuna Republike Slovenije za leto {{ leto }}: {{ po }}" />
+    <meta name="description" content="Kam gre naš denar? " />
+    <link rel="image_src" href="prihodki.png" / >
+    
+    
+    <script type="text/javascript">
+      $(document).ready(function() {
+        var x = $(document).width()-30+'px';
+        var y = $(document).height()-100+'px';
+        $("#infovis").css('width', x);
+        $("#infovis").css('height', y);
+        init();
+      });
+    
+    </script>
+    </head>
+
+    <body>
+      <div>
+             <div id="header">Proračun za proračunsko leto {{ leto }}:
+{% if po == 'odhodki' %}<a href="{% url proracun_treemap 'prihodki' leto date %}">prihodki</a>{% else %}prihodki{% endif %} | 
+{% if po == 'prihodki' %}<a href="{% url proracun_treemap 'odhodki' leto date %}">odhodki</a>{% else %}odhodki{% endif %}</div>
+      <div>
+             <div id="infovis" />
+      </div>
+             <div id="footer">Legenda: barve nimajo posebnega pomena | Levi klik na porabnika poveča pogled, desni klik pomanjša <br /> <a href="http://www.mf.gov.si/slov/proracun/sprejet_proracun/2010/10_01_splosni_del_2010.pdf">Vir podakov</a> <a href="source/10_01_splosni_del_2010.pdf">(kopija)</a> | <a href="http://thejit.org/">JavaScript InfoVis Toolkit</a> | <a href="http://github.com/gandalfar/proracun">Izvorna koda</a> | Povezal skupaj: <a href="http://www.jurecuhalev.com/blog/">jure</a> | <a name="fb_share" type="button" href="http://www.facebook.com/sharer.php">Deli z ostalimi</a></div>
+    </body>
+</html>

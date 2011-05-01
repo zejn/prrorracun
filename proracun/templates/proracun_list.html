@@ -1,0 +1,29 @@
+<html>
+<head>
+<link type="text/css" rel="stylesheet" href="{{ MEDIA_URL }}proracun2010.css" />
+
+<style>
+body {
+	font-size: 16px;
+	font-weight: bold;
+	text-align: left;
+	font-family:Verdana, Geneva, Arial, Helvetica, sans-serif;
+}
+
+a {
+	color: #fff;
+	text-decoration: underline;
+}
+
+</style>
+</head>
+<body>
+
+<ul>
+{% for p in object_list %}
+<li><a href="{% url proracun_treemap 'prihodki' p.proracunsko_leto p.datum_sprejetja|date:"Y-m-d" %}">Proračun - {{ p.tip_proracuna }} za leto {{ p.proracunsko_leto }} z dne {{ p.datum_sprejetja }} Prihodki</a> - <a href="{% url proracun_treemap 'odhodki' p.proracunsko_leto p.datum_sprejetja|date:"Y-m-d" %}">Odhodki</a></li>
+{% endfor %}
+</ul>
+
+</body>
+</head>
