@@ -42,12 +42,10 @@ function format_money(n, c, d, t) {
 }
 
 var areaChart;
-var JSONs = [];
 var jSONs = {};
 
 function init() {
     var json = {{ json }};
-    JSONs.push(json);
     jSONs[{{ sifra }}] = {{ json }};
     areaChart = new $jit.AreaChart({
       //id of the visualization container
@@ -136,11 +134,10 @@ function init() {
 {% else %}
 (function () {
   var jsn = {{ json }};
-  JSONs.push(jsn);
   jSONs[{{ sifra }}] = jsn;
   areaChart.loadJSON(jsn);
   $('#title')[0].innerHTML = jsn.title;
-  if (JSONs[JSONs.length-1].title.match(/^#(\d+)/)) {
+  if (jsn.title.match(/^#(\d+)/)) {
     document.location.hash = '#' + jsn.title.match(/^#(\d+)/)[1];
   }
 })();
