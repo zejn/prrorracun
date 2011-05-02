@@ -43,10 +43,12 @@ function format_money(n, c, d, t) {
 
 var areaChart;
 var JSONs = [];
+var jSONs = {};
 
 function init() {
     var json = {{ json }};
     JSONs.push(json);
+    jSONs[{{ sifra }}] = {{ json }};
     areaChart = new $jit.AreaChart({
       //id of the visualization container
       injectInto: 'infovis',
@@ -89,17 +91,28 @@ function init() {
           //console.log(node);
           if (node) {
             var postavka = node.name.match(/^(\d+)/)[0];
-            if (postavka > 999) {
+            if (postavka > 9999) {
               return true;
             }
+            document.location.hash = '#' + postavka;
             add_subchart(postavka);
           }
         },
         onRightClick: function (node, eventInfo, e) {
-          if (JSONs.length > 1) {
-            JSONs.pop();
-            areaChart.loadJSON(JSONs[JSONs.length-1]);
-            $('#title')[0].innerHTML = JSONs[JSONs.length-1].title;
+          var curjson, postavka = document.location.hash.match(/^#(\d+)/);
+          if (!postavka) return;
+          postavka = postavka[1];
+          postavka = postavka.substr(0, postavka.length-1);
+          if (postavka.length < 2) {
+            postavka = '0';
+          }
+          curjson = jSONs[postavka];
+          areaChart.loadJSON(curjson);
+          $('#title')[0].innerHTML = curjson.title;
+          if (postavka.length > 1) {
+            document.location.hash = '#' + postavka;
+          } else {
+            document.location.hash = '';
           }
         }
       },
@@ -121,7 +134,14 @@ function init() {
     }
 }
 {% else %}
-JSONs.push({{ json }});
-areaChart.loadJSON(JSONs[JSONs.length-1]);
-$('#title')[0].innerHTML = JSONs[JSONs.length-1].title;
+(function () {
+  var jsn = {{ json }};
+  JSONs.push(jsn);
+  jSONs[{{ sifra }}] = jsn;
+  areaChart.loadJSON(jsn);
+  $('#title')[0].innerHTML = jsn.title;
+  if (JSONs[JSONs.length-1].title.match(/^#(\d+)/)) {
+    document.location.hash = '#' + jsn.title.match(/^#(\d+)/)[1];
+  }
+})();
 {% endif %}

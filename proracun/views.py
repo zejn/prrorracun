@@ -70,15 +70,17 @@ def areachart_js(request, po, sifra='0'):
 		title = u'Proračun Republike Slovenije skozi čas'
 	else:
 		
-		if Postavka.objects.filter(sifra__gte=sifra*10, sifra__lt=(sifra+1)*10, proracun__in=proracuni).aggregate(Sum('znesek'))['znesek__sum'] == Decimal('0.0'):
-			return HttpResponse("", mimetype='text/javascript')
+		qs = Postavka.objects.filter(sifra__gte=sifra*10, sifra__lt=(sifra+1)*10)
+		if qs.filter(proracun__in=proracuni).aggregate(Sum('znesek'))['znesek__sum'] in (Decimal('0.0'), None):
+			qs = Postavka.objects.filter(sifra=sifra)
+			
 		try:
 			pst = Postavka.objects.get(sifra=sifra, proracun=Proracun.objects.exclude(tip_proracuna='ZR').order_by('-datum_sprejetja')[0])
 			title = u'%s %s' % (pst.sifra, pst.naziv)
 		except Postavka.DoesNotExist:
 			title = ''
 		
-		postavke_names = dict([(i.sifra, i.naziv) for i in Postavka.objects.filter(sifra__gte=sifra*10, sifra__lt=(sifra+1)*10).exclude(proracun__tip_proracuna='ZR')])
+		postavke_names = dict([(i.sifra, i.naziv) for i in qs.exclude(proracun__tip_proracuna='ZR')])
 		colors = None
 		ordering = postavke_names.items()
 		ordering.sort()
@@ -90,10 +92,10 @@ def areachart_js(request, po, sifra='0'):
 			zneski = dict([(i.sifra, i.znesek) for i in Postavka.objects.filter(sifra__in=sifre, proracun=p)])
 			values = [zneski[i] for i in sifre]
 		else:
-			zneski = dict([(i.sifra, i.znesek) for i in Postavka.objects.filter(sifra__gte=sifra*10, sifra__lt=(sifra+1)*10, proracun=p)])
+			zneski = dict([(i.sifra, i.znesek) for i in qs.filter(proracun=p)])
 			values = [zneski.get(i[0], 0) for i in ordering]
 		all_values.append({
-			'label': '%s za leto %s, %s' % (p.tip_proracuna, p.proracunsko_leto, p.datum_sprejetja),
+			'label': p.proracunsko_leto,
 			'values': values,
 		})
 	struct = {
@@ -109,6 +111,7 @@ def areachart_js(request, po, sifra='0'):
 		'json': mark_safe(json),
 		'init': init,
 		'po': po,
+		'sifra': sifra,
 		}
 	return render_to_response("areachart.js", RequestContext(request, context), mimetype='text/javascript')
 
