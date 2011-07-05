@@ -84,6 +84,7 @@ def fetch_raw_data():
 def load_data():
 	try:
 		fd = open(DATA_FILE, 'rb')
+		print 'Using cached data: %s' % DATA_FILE
 	except (IOError,), e:
 		fetch_raw_data()
 		fd = open(DATA_FILE, 'rb')

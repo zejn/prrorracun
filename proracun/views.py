@@ -13,6 +13,7 @@ from django.http import HttpResponse
 
 from proracun.models import Proracun, Postavka
 from proracun.utils import Prihodki, Odhodki
+from proracun.inflacija import inflation_calc
 
 def treemap_js(request, po, leto, date):
 	handler = {
@@ -38,7 +39,8 @@ def treemap(request, po, leto, date):
 		}
 	return render_to_response("treemap.html", RequestContext(request, context))
 
-def areachart_js(request, po, sifra='0'):
+def areachart_js(request, po, sifra='0', inflation='0'):
+	inflation_adjust = inflation == '1'
 	sifra = int(sifra)
 	init = bool(sifra == 0)
 	
@@ -94,6 +96,10 @@ def areachart_js(request, po, sifra='0'):
 		else:
 			zneski = dict([(i.sifra, i.znesek) for i in qs.filter(proracun=p)])
 			values = [zneski.get(i[0], 0) for i in ordering]
+		if inflation_adjust:
+			start_date = datetime.date(int(p.proracunsko_leto), 12, 1)
+			end_date = datetime.date.today()
+			values = [inflation_calc.revalorize(start_date, end_date, i) for i in values]
 		all_values.append({
 			'label': '%s' % (p.proracunsko_leto,),
 			'values': values,
@@ -112,13 +118,15 @@ def areachart_js(request, po, sifra='0'):
 		'init': init,
 		'po': po,
 		'sifra': sifra,
+		'inflacija': inflation,
 		}
 	return render_to_response("areachart.js", RequestContext(request, context), mimetype='text/javascript')
 
-def areachart(request, po):
+def areachart(request, po, inflacija):
 	context = {
 		'po': po,
-		'js_vizualizacija_url': reverse('proracun_areachart_js', args=(po,'0')),
+		'inflacija': inflacija,
+		'js_vizualizacija_url': reverse('proracun_areachart_js', args=(po,'0', inflacija)),
 		}
 	return render_to_response("areachart.html", RequestContext(request, context))
 

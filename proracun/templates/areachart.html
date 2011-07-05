@@ -30,8 +30,8 @@
     <body>
       <div>
              <div id="header"><div id="title">Proračun Republike Slovenije skozi čas</div>
-{% if po == 'odhodki' %}<a href="{% url proracun_areachart 'prihodki' %}">prihodki</a>{% else %}prihodki{% endif %} | 
-{% if po == 'prihodki' %}<a href="{% url proracun_areachart 'odhodki' %}">odhodki</a>{% else %}odhodki{% endif %}</div>
+{% if po == 'odhodki' %}<a href="{% url proracun_areachart 'prihodki' inflacija %}">prihodki</a>{% else %}prihodki{% endif %} | 
+{% if po == 'prihodki' %}<a href="{% url proracun_areachart 'odhodki' inflacija %}">odhodki</a>{% else %}odhodki{% endif %}</div>
       <div>
              <div id="infovis" />
       </div>
