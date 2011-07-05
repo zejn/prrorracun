@@ -3,7 +3,7 @@
 import os
 
 DATA_URL = 'http://www.stat.si/indikatorji_xls.asp?id=1&zacobd='
-DATA_FILE = os.path.abspath(os.path.join(os.path.dirname(__file__), 'inflacija.pck'))
+DATA_FILE = os.path.abspath(os.path.join(os.path.dirname(__file__), 'inflacija.txt'))
 
 
 import collections
@@ -69,12 +69,27 @@ class InflationCalc:
 		self.cache[(start_date.year, start_date.month, end_date.year, end_date.month)] = f
 		
 		return f
+	
+	def revalorize(self, start_date, end_date, value):
+		f = self.revalorization_factor(start_date, end_date)
+		return value * f
 
-def fetch_data():
+def fetch_raw_data():
 	u = urllib.urlopen(DATA_URL)
 	d = u.read()
-	
-	reader = csv.reader(StringIO(d), delimiter='\t')
+	f = open(DATA_FILE, 'w')
+	f.write(d)
+	f.close()
+
+def load_data():
+	try:
+		fd = open(DATA_FILE, 'rb')
+	except (IOError,), e:
+		fetch_raw_data()
+		fd = open(DATA_FILE, 'rb')
+	except:
+		raise
+	reader = csv.reader(fd, delimiter='\t')
 	
 	num_re = re.compile('^[\d\,\.]+$')
 	records = []
@@ -107,21 +122,9 @@ def fetch_data():
 	
 	return records
 
-def cached_fetch_data():
-	try:
-		records = pickle.load(open(DATA_FILE))
-		print 'Loading cached data from `%s`' % DATA_FILE
-		return records
-	except (IOError, EOFError), e:
-		records = fetch_data()
-		pickle.dump(records, open(DATA_FILE, 'w'))
-		return records
-
+inflation_calc = InflationCalc(load_data())
 
 if __name__ == "__main__":
-	records = cached_fetch_data()
-	calc = InflationCalc(records)
-	print calc.revalorization_factor(datetime.date(2005, 1, 1), datetime.date(2006, 1, 1))
-	print calc.revalorization_factor(datetime.date(2005, 1, 1), datetime.date(2006, 1, 1))
+	assert inflation_calc.revalorization_factor(datetime.date(2005, 1, 1), datetime.date(2006, 1, 1)) == Decimal('1.023')
 
 
