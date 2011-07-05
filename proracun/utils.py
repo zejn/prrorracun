@@ -186,11 +186,13 @@ class Prihodki(Renderer):
             return '#537B99'    # dark green
 
 class Odhodki(Renderer):
-    codes = (40, 41, 42, 43, 45, 44, 55)
+    codes = (40, 41, 42, 43, 45, 44, 55, 57)
     name = 'SKUPAJ ODHODKI (40+41+42+43+45)+(44+55)'
     def getColor(self, name):
         name = str(name)
         if name[:2] in ['55']:
+            return '#c30000'
+        elif name[:2] == '57':
             return '#e30000'                #dolg
         elif name[:3] in ['400', '401']:
             return '#1E4F34'                #place

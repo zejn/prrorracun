@@ -46,7 +46,7 @@ def areachart_js(request, po, sifra='0'):
 	y = None
 	curpro = None
 	proracuni = []
-	for p in Proracun.objects.exclude(tip_proracuna='ZR').order_by('proracunsko_leto', 'datum_sprejetja'):
+	for p in Proracun.objects.all().order_by('proracunsko_leto', 'datum_sprejetja'):
 		if y != p.proracunsko_leto:
 			if curpro is not None:
 				proracuni.append(curpro)
@@ -75,12 +75,12 @@ def areachart_js(request, po, sifra='0'):
 			qs = Postavka.objects.filter(sifra=sifra)
 			
 		try:
-			pst = Postavka.objects.get(sifra=sifra, proracun=Proracun.objects.exclude(tip_proracuna='ZR').order_by('-datum_sprejetja')[0])
+			pst = Postavka.objects.get(sifra=sifra, proracun=Proracun.objects.all().order_by('-datum_sprejetja')[0])
 			title = u'%s %s' % (pst.sifra, pst.naziv)
 		except Postavka.DoesNotExist:
 			title = ''
 		
-		postavke_names = dict([(i.sifra, i.naziv) for i in qs.exclude(proracun__tip_proracuna='ZR')])
+		postavke_names = dict([(i.sifra, i.naziv) for i in qs])
 		colors = None
 		ordering = postavke_names.items()
 		ordering.sort()
@@ -90,12 +90,12 @@ def areachart_js(request, po, sifra='0'):
 	for p in proracuni:
 		if init:
 			zneski = dict([(i.sifra, i.znesek) for i in Postavka.objects.filter(sifra__in=sifre, proracun=p)])
-			values = [zneski[i] for i in sifre]
+			values = [zneski.get(i, 0) for i in sifre]
 		else:
 			zneski = dict([(i.sifra, i.znesek) for i in qs.filter(proracun=p)])
 			values = [zneski.get(i[0], 0) for i in ordering]
 		all_values.append({
-			'label': p.proracunsko_leto,
+			'label': '%s' % (p.proracunsko_leto,),
 			'values': values,
 		})
 	struct = {
