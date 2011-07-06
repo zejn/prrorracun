@@ -14,6 +14,7 @@ from django.http import HttpResponse
 from proracun.models import Proracun, Postavka
 from proracun.utils import Prihodki, Odhodki
 from proracun.inflacija import inflation_calc
+from proracun.bdpindex import bdp_calc
 
 def treemap_js(request, po, leto, date):
 	handler = {
@@ -39,8 +40,7 @@ def treemap(request, po, leto, date):
 		}
 	return render_to_response("treemap.html", RequestContext(request, context))
 
-def areachart_js(request, po, sifra='0', inflation='0'):
-	inflation_adjust = inflation == '1'
+def areachart_js(request, po, sifra='0', inflacija='0'):
 	sifra = int(sifra)
 	init = bool(sifra == 0)
 	
@@ -48,7 +48,8 @@ def areachart_js(request, po, sifra='0', inflation='0'):
 	y = None
 	curpro = None
 	proracuni = []
-	for p in Proracun.objects.all().order_by('proracunsko_leto', 'datum_sprejetja'):
+	today = datetime.date.today()
+	for p in Proracun.objects.filter(proracunsko_leto__lt=today.year).order_by('proracunsko_leto', 'datum_sprejetja'):
 		if y != p.proracunsko_leto:
 			if curpro is not None:
 				proracuni.append(curpro)
@@ -96,10 +97,14 @@ def areachart_js(request, po, sifra='0', inflation='0'):
 		else:
 			zneski = dict([(i.sifra, i.znesek) for i in qs.filter(proracun=p)])
 			values = [zneski.get(i[0], 0) for i in ordering]
-		if inflation_adjust:
+		if inflacija == '1':
 			start_date = datetime.date(int(p.proracunsko_leto), 12, 1)
 			end_date = datetime.date.today()
 			values = [inflation_calc.revalorize(start_date, end_date, i) for i in values]
+		elif inflacija == '2':
+			start_date = datetime.date(int(p.proracunsko_leto), 12, 1)
+			end_date = datetime.date.today()
+			values = [bdp_calc.revalorize(start_date, end_date, i) for i in values]
 		all_values.append({
 			'label': '%s' % (p.proracunsko_leto,),
 			'values': values,
@@ -118,13 +123,19 @@ def areachart_js(request, po, sifra='0', inflation='0'):
 		'init': init,
 		'po': po,
 		'sifra': sifra,
-		'inflacija': inflation,
+		'inflacija': inflacija,
 		}
 	return render_to_response("areachart.js", RequestContext(request, context), mimetype='text/javascript')
 
 def areachart(request, po, inflacija):
+	extratitle = u''
+	if inflacija == '1':
+		extratitle = u'(revaloriziran glede na inflacijo)'
+	elif inflacija == '2':
+		extratitle = u'(revaloriziran glede na rast BDP)'
 	context = {
 		'po': po,
+		'extratitle': extratitle,
 		'inflacija': inflacija,
 		'js_vizualizacija_url': reverse('proracun_areachart_js', args=(po,'0', inflacija)),
 		}
