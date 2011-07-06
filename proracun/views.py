@@ -16,6 +16,12 @@ from proracun.utils import Prihodki, Odhodki
 from proracun.inflacija import inflation_calc
 from proracun.bdpindex import bdp_calc
 
+extratitles = {
+	'0': u'',
+	'1': u'(revalorizirano glede na inflacijo)',
+	'2': u'(revalorizirano glede na rast BDP)',
+}
+
 def treemap_js(request, po, leto, date):
 	handler = {
 		'prihodki': Prihodki(),
@@ -123,16 +129,13 @@ def areachart_js(request, po, sifra='0', inflacija='0'):
 		'init': init,
 		'po': po,
 		'sifra': sifra,
+		'extratitle': extratitles.get(inflacija, u''),
 		'inflacija': inflacija,
 		}
 	return render_to_response("areachart.js", RequestContext(request, context), mimetype='text/javascript')
 
 def areachart(request, po, inflacija):
-	extratitle = u''
-	if inflacija == '1':
-		extratitle = u'(revaloriziran glede na inflacijo)'
-	elif inflacija == '2':
-		extratitle = u'(revaloriziran glede na rast BDP)'
+	extratitle = extratitles.get(inflacija, u'')
 	context = {
 		'po': po,
 		'extratitle': extratitle,

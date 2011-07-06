@@ -107,7 +107,7 @@ function init() {
           }
           curjson = jSONs[postavka];
           areaChart.loadJSON(curjson);
-          $('#title')[0].innerHTML = curjson.title;
+          $('#title')[0].innerHTML = curjson.title + " {{ extratitle }}";
           if (postavka.length > 1) {
             document.location.hash = '#' + postavka;
           } else {
@@ -137,7 +137,7 @@ function init() {
   var jsn = {{ json }};
   jSONs[{{ sifra }}] = jsn;
   areaChart.loadJSON(jsn);
-  $('#title')[0].innerHTML = jsn.title;
+  $('#title')[0].innerHTML = jsn.title + ' {{ extratitle }}';
   if (jsn.title.match(/^#(\d+)/)) {
     document.location.hash = '#' + jsn.title.match(/^#(\d+)/)[1];
   }
