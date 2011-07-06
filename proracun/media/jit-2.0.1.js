@@ -10109,9 +10109,9 @@ $jit.ST.Plot.NodeTypes.implement({
           if(dimArray[i][0] > 0)
             valAcum += (valArray[i][0] || 0);
         }
-        var fixed_offsets = false;
         // if(prev && label.type == 'Native') {
         if(label.type == 'Native') {
+          // only first label
           ctx.save();
           ctx.beginPath();
           ctx.fillStyle = ctx.strokeStyle = label.color;
@@ -10121,12 +10121,14 @@ $jit.ST.Plot.NodeTypes.implement({
           var aggValue = aggregates(node.name, valLeft, valRight, node, valAcum);
           //console.log('ena', node.name, valLeft, valRight, node, valAcum);
           if(aggValue !== false) {
-            fixed_offsets = true;
             labelpos[node.name] = y - acumLeft - config.labelOffset;
             if (labelpos[node.name] + label.size > labelpos[prev] && labelpos[node.name] - label.size < labelpos[prev]) {
               while (labelpos[node.name] + label.size > labelpos[prev] && labelpos[node.name] - label.size < labelpos[prev]) {
                 labelpos[node.name] = labelpos[node.name] - 1;
               }
+            }
+            if (prev == false) {
+              labelpos[node.name] = labelpos[node.name] - label.size;
             }
             ctx.fillText(aggValue !== true? aggValue : valAcum, x, labelpos[node.name] - label.size/2, width);
           }
@@ -10137,7 +10139,7 @@ $jit.ST.Plot.NodeTypes.implement({
         }
         
         if (node.getData('next') !== null) {
-          // also draw last label
+          // all other labels
           if (label.type == 'Native') {
             ctx.save();
             ctx.beginPath();
