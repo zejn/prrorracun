@@ -13,6 +13,7 @@ var labelType, useGradients, nativeTextSupport, animate;
   labelType = (!nativeCanvasSupport || (textSupport && !iStuff))? 'Native' : 'HTML';
   nativeTextSupport = labelType == 'Native';
   useGradients = nativeCanvasSupport;
+  useGradients = false;
   animate = !(iStuff || !nativeCanvasSupport);
 })();
 
