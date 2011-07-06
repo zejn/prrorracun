@@ -10128,7 +10128,7 @@ $jit.ST.Plot.NodeTypes.implement({
               }
             }
             if (prev == false) {
-              labelpos[node.name] = labelpos[node.name] - label.size;
+              labelpos[node.name] = labelpos[node.name] - label.size - 3;
             }
             ctx.fillText(aggValue !== true? aggValue : valAcum, x, labelpos[node.name] - label.size/2, width);
           }
