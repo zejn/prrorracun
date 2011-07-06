@@ -10058,6 +10058,7 @@ $jit.ST.Plot.NodeTypes.implement({
       if (colorArray && dimArray && stringArray) {
         for (var i=0, l=dimArray.length, acumLeft=0, acumRight=0, valAcum=0; i<l; i++) {
           ctx.fillStyle = ctx.strokeStyle = colorArray[i % colorLength];
+          ctx.lineWidth = 1.0;
           ctx.save();
           if(gradient && (dimArray[i][0] > 0 || dimArray[i][1] > 0)) {
             var h1 = acumLeft + dimArray[i][0],
@@ -10081,6 +10082,7 @@ $jit.ST.Plot.NodeTypes.implement({
           ctx.lineTo(x, y - acumLeft - dimArray[i][0]);
           ctx.lineTo(x, y - acumLeft);
           ctx.fill();
+          ctx.stroke();
           ctx.restore();
           if(border) {
             var strong = border.name == stringArray[i];
@@ -10358,6 +10360,7 @@ $jit.AreaChart = new Class({
               leftAcum+= dimArray[i][0];
             }
           }
+
           aggregateStyle.top = (-font - config.labelOffset) + 'px';
           labelStyle.top = (config.labelOffset + leftAcum) + 'px';
           domElement.style.top = parseInt(domElement.style.top, 10) - leftAcum + 'px';
