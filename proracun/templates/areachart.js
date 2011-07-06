@@ -1,5 +1,5 @@
 {% if init %}
-var labelType, useGradients, nativeTextSupport, animate;
+var labelType, useGradients, nativeTextSupport, animate, labelpos = {}, labelposR = {};
 
 (function() {
   var ua = navigator.userAgent,
