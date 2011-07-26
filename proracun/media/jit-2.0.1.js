@@ -10109,6 +10109,7 @@ $jit.ST.Plot.NodeTypes.implement({
           if(dimArray[i][0] > 0)
             valAcum += (valArray[i][0] || 0);
         }
+        
         // if(prev && label.type == 'Native') {
         if(label.type == 'Native') {
           // only first label
@@ -10127,10 +10128,7 @@ $jit.ST.Plot.NodeTypes.implement({
                 labelpos[node.name] = labelpos[node.name] - 1;
               }
             }
-            if (prev == false) {
-              labelpos[node.name] = labelpos[node.name] - label.size - 3;
-            }
-            ctx.fillText(aggValue !== true? aggValue : valAcum, x, labelpos[node.name] - label.size/2, width);
+            ctx.fillText(aggValue !== true? aggValue : valAcum, x, labelpos[node.name] - label.size/2, width*2);
           }
           if(showLabels(node.name, valLeft, valRight, node)) {
             ctx.fillText(node.name, x, y + label.size/2 + config.labelOffset);
@@ -10138,7 +10136,7 @@ $jit.ST.Plot.NodeTypes.implement({
           ctx.restore();
         }
         
-        if (node.getData('next') !== null) {
+        if (typeof(labelpos[node.getData('next')]) == 'undefined') {
           // all other labels
           if (label.type == 'Native') {
             ctx.save();
@@ -10148,17 +10146,14 @@ $jit.ST.Plot.NodeTypes.implement({
             ctx.textAlign = 'center';
             ctx.textBaseline = 'middle';
             var aggValue = aggregates(node.name, valRight, valRight, node, valRight);
-            //console.log('dva', node.name, valLeft, valRight, node, valAcum, aggValue);
-            //console.log(node.getData('next'));
             if(aggValue !== false) {
-                // y - acumRight - config.labelOffset - label.size/2
                 labelposR[node.name] = y - acumRight - config.labelOffset;
                 if (labelposR[node.name] + label.size > labelposR[prev] && labelposR[node.name] - label.size < labelposR[prev]) {
                   while (labelposR[node.name] + label.size > labelposR[prev] && labelposR[node.name] - label.size < labelposR[prev]) {
                     labelposR[node.name] = labelposR[node.name] - 1;
                   }
                 }
-                ctx.fillText(aggValue !== true? aggValue : valAcum, x + width, labelposR[node.name] - label.size/2, width);
+                ctx.fillText(aggValue !== true? aggValue : valAcum, x + width, labelposR[node.name] - label.size/2, width*2);
             }
             if(showLabels(node.name, valLeft, valRight, node)) {
               ctx.fillText(node.getData('next'), x + width, y + label.size/2 + config.labelOffset);
@@ -10166,7 +10161,9 @@ $jit.ST.Plot.NodeTypes.implement({
             ctx.restore();
           }
         }
-      }
+        
+
+       }
     },
     'contains': function(node, mpos) {
       var pos = node.pos.getc(true), 

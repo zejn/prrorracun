@@ -125,7 +125,7 @@ function init() {
 
     if (document.location.hash) {
       var postavka = document.location.hash.match(/^#(\d+)/)[1];
-      if (postavka > 9 && postavka < 999) {
+      if (postavka > 9 && postavka < 9999) {
         add_subchart(Math.round(postavka / 10), function() {
           add_subchart(postavka);
         });
