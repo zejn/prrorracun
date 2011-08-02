@@ -17,9 +17,9 @@ from proracun.inflacija import inflation_calc
 from proracun.bdpindex import bdp_calc
 
 extratitles = {
-	'0': u'',
-	'1': u'(revalorizirano glede na inflacijo)',
-	'2': u'(revalorizirano glede na rast BDP)',
+	'nic': u'',
+	'inf': u'(revalorizirano glede na inflacijo)',
+	'bdp': u'(revalorizirano glede na rast BDP)',
 }
 
 def treemap_js(request, po, leto, date):
@@ -46,7 +46,8 @@ def treemap(request, po, leto, date):
 		}
 	return render_to_response("treemap.html", RequestContext(request, context))
 
-def areachart_js(request, po, sifra='0', inflacija='0'):
+def areachart_js(request, po, sifra='0', inflacija='nic'):
+	str_sifra = sifra
 	sifra = int(sifra)
 	init = bool(sifra == 0)
 	
@@ -80,6 +81,8 @@ def areachart_js(request, po, sifra='0', inflacija='0'):
 	else:
 		
 		qs = Postavka.objects.filter(sifra__gte=sifra*10, sifra__lt=(sifra+1)*10)
+		if len(str_sifra) == 4:
+			qs = Postavka.objects.filter(sifra__gte=sifra*100, sifra__lt=(sifra+1)*100)
 		if qs.filter(proracun__in=proracuni).aggregate(Sum('znesek'))['znesek__sum'] in (Decimal('0.0'), None):
 			qs = Postavka.objects.filter(sifra=sifra)
 			
@@ -103,11 +106,11 @@ def areachart_js(request, po, sifra='0', inflacija='0'):
 		else:
 			zneski = dict([(i.sifra, i.znesek) for i in qs.filter(proracun=p)])
 			values = [zneski.get(i[0], 0) for i in ordering]
-		if inflacija == '1':
+		if inflacija == 'inf':
 			start_date = datetime.date(int(p.proracunsko_leto), 12, 1)
 			end_date = datetime.date.today()
 			values = [inflation_calc.revalorize(start_date, end_date, i) for i in values]
-		elif inflacija == '2':
+		elif inflacija == 'bdp':
 			start_date = datetime.date(int(p.proracunsko_leto), 12, 1)
 			end_date = datetime.date.today()
 			values = [bdp_calc.revalorize(start_date, end_date, i) for i in values]

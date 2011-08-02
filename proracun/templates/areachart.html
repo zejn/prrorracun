@@ -4,11 +4,12 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link type="text/css" rel="stylesheet" href="{{ MEDIA_URL }}proracun2010.css" />
 
+    <script type="text/javascript" src="{{ MEDIA_URL }}excanvas.js"></script>
     <script type="text/javascript" src="{{ MEDIA_URL }}jquery-1.4.2.js"></script>    
     <script type="text/javascript" src="{{ MEDIA_URL }}jit-2.0.1.js" ></script>
     <script type="text/javascript" src="{{ js_vizualizacija_url }}" ></script>
     
-    <title>Vizualizacija proračuna Republike Slovenije za leto {{ leto }}: {{ po }}</title>
+    <title>Vizualizacija proračuna Republike Slovenije od leta 1992 do leta 2010</title>
     
     <meta name="title" content="Vizualizacija proračuna Republike Slovenije za leto {{ leto }}: {{ po }}" />
     <meta name="description" content="Kam gre naš denar? " />
@@ -17,10 +18,15 @@
     
     <script type="text/javascript">
       $(document).ready(function() {
-        var x = $(document).width()-30+'px';
-        var y = $(document).height()-100+'px';
+        var x = $("html").width()-30+'px';
+        var y = $("html").height()-150+'px';
         $("#infovis").css('width', x);
         $("#infovis").css('height', y);
+        $("#reval").change(function () {
+          var u = document.location.href;
+          u = u.replace(/\/{{ inflacija }}\//, '/' + $(this).val() + '/');
+          document.location.href = u;
+        });
         init();
       });
     
@@ -28,13 +34,59 @@
     </head>
 
     <body>
-      <div>
-             <div id="header"><div id="title">Proračun Republike Slovenije skozi čas {{ extratitle }}</div>
-{% if po == 'odhodki' %}<a href="{% url proracun_areachart 'prihodki' inflacija %}">prihodki</a>{% else %}prihodki{% endif %} | 
-{% if po == 'prihodki' %}<a href="{% url proracun_areachart 'odhodki' inflacija %}">odhodki</a>{% else %}odhodki{% endif %}</div>
-      <div>
-             <div id="infovis" />
+      <div id="revaldiv">
+        Revalorizacija:
+        <select name="revalorizacija" id="reval">
+          <option {% if inflacija == "nic" %}selected="selected" {% endif %}value="nic">Brez</option>
+          <option {% if inflacija == "inf" %}selected="selected" {% endif %}value="inf">Glede na inflacijo</option>
+          <option {% if inflacija == "bdp" %}selected="selected" {% endif %}value="bdp">Glede na rast BDP</option>
+        </select>
       </div>
-             <div id="footer">Legenda: barve nimajo posebnega pomena | Levi klik na porabnika poveča pogled, desni klik pomanjša <br />
+      <div>
+        <div id="header">
+          <div id="title">Proračun Republike Slovenije skozi čas {{ extratitle }}</div>
+{% if po == 'odhodki' %}<a href="{% url proracun_areachart 'prihodki' inflacija %}">prihodki</a>{% else %}prihodki{% endif %} |
+{% if po == 'prihodki' %}<a href="{% url proracun_areachart 'odhodki' inflacija %}">odhodki</a>{% else %}odhodki{% endif %}
+<span class="fbshare"><a name="fb_share" type="button" href="http://www.facebook.com/sharer.php">Deli z ostalimi</a><script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script></span>
+        </div>
+      <div>
+             <div id="infovis">&nbsp;</div>
+      </div>
+      <div id="footer">
+        Legenda: barve nimajo posebnega pomena | Levi klik na porabnika poveča pogled, desni klik pomanjša <br />
+        Na grafu so predstavljeni izvedeni proračun RS od leta 1992 do leta 2010. Zaradi preglednosti in predstavitve razmerij so skupaj združene A, B in C bilance.<br />
+        <a href="http://www.mf.gov.si/si/delovna_podrocja/tekoca_gibanja_v_javnih_financah/bilten_javnih_financ/">Vir podakov</a> <a href="{{ MEDIAURL }}vir/Drzavni_proracun_1992-2011.xls">(kopija)</a> | <a href="http://thejit.org/">JavaScript InfoVis Toolkit</a> | Izvedba: <a href="http://slo-tech.com/">Slo-Tech.com</a>
+
+      </div>
+    <script type="text/javascript"> 
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-53250-1']);
+  _gaq.push(['_trackPageview']);
+ 
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+        </script> 
+<script type="text/javascript"> 
+var _sf_async_config={uid:15694,domain:"slo-tech.com"};
+(function(){
+  function loadChartbeat() {
+    window._sf_endpt=(new Date()).getTime();
+    var e = document.createElement('script');
+    e.setAttribute('language', 'javascript');
+    e.setAttribute('type', 'text/javascript');
+    e.setAttribute('src',
+       (("https:" == document.location.protocol) ? "https://s3.amazonaws.com/" : "http://") +
+       "static.chartbeat.com/js/chartbeat.js");
+    document.body.appendChild(e);
+  }
+  var oldonload = window.onload;
+  window.onload = (typeof window.onload != 'function') ?
+     loadChartbeat : function() { oldonload(); loadChartbeat(); };
+})();
+</script>
     </body>
 </html>

@@ -90,7 +90,7 @@ function init() {
           //console.log(node);
           if (node) {
             var postavka = node.name.match(/^(\d+)/)[0];
-            if (postavka > 9999) {
+            if ((postavka > 9999 && postavka < 100000) || postavka > 999999) {
               return true;
             }
             document.location.hash = '#' + postavka;
@@ -100,14 +100,26 @@ function init() {
         onRightClick: function (node, eventInfo, e) {
           var curjson, postavka = document.location.hash.match(/^#(\d+)/);
           if (!postavka) return;
-          postavka = postavka[1];
-          postavka = postavka.substr(0, postavka.length-1);
+          if (postavka[1].length == 6) {
+            postavka = postavka[1];
+            postavka = postavka.substr(0, postavka.length-2);
+          } else {
+            postavka = postavka[1];
+            postavka = postavka.substr(0, postavka.length-1);
+          }
           if (postavka.length < 2) {
             postavka = '0';
           }
           curjson = jSONs[postavka];
-          areaChart.loadJSON(curjson);
-          $('#title')[0].innerHTML = curjson.title + " {{ extratitle }}";
+          if (typeof(curjson) == 'undefined') {
+            add_subchart(postavka, function () {
+              var cj = jSONs[postavka];
+              $('#title')[0].innerHTML = cj.title + " {{ extratitle }}";
+            });
+          } else {
+            areaChart.loadJSON(curjson);
+            $('#title')[0].innerHTML = curjson.title + " {{ extratitle }}";
+          }
           if (postavka.length > 1) {
             document.location.hash = '#' + postavka;
           } else {
@@ -125,8 +137,12 @@ function init() {
 
     if (document.location.hash) {
       var postavka = document.location.hash.match(/^#(\d+)/)[1];
-      if (postavka > 9 && postavka < 9999) {
+      if (postavka > 9 && postavka <= 9999) {
         add_subchart(Math.round(postavka / 10), function() {
+          add_subchart(postavka);
+        });
+      } else if (postavka > 99999 && postavka <= 999999) {
+        add_subchart(Math.round(postavka / 100), function() {
           add_subchart(postavka);
         });
       }

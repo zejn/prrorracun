@@ -10,9 +10,10 @@ Pomen indeksov:
 	meseca glede na enako obdobje v preteklem letu.
 
 
-Zajeto obdobje: januar 1991 - junij 2011
+Zajeto obdobje: januar 1991 - julij 2011
 
 	Meseèni indeks	Letni indeks	Povpreèni letni<br>indeks	
+julij 2011	98,9	100,9	101,6	
 junij 2011	99,5	101,3	101,7	
 maj 2011	100,8	102,2	101,8	
 april 2011	100,8	101,7	101,7	

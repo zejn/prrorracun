@@ -83,6 +83,7 @@ html, body {
 
 #footer {
   color: white;
+  height: 50px;
 }
 
 #footer a {
@@ -92,5 +93,15 @@ html, body {
 #legend {
   color: white;
   float: left;
-  
 }
+
+#revaldiv {
+  color: white;
+  font-size: 12px;
+  float: right;
+  padding: 10px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+

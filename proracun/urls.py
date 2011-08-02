@@ -20,13 +20,13 @@ urlpatterns = patterns('',
     url(r'^p/(?P<po>(:?prihodki|odhodki))/(?P<leto>\d{4})/(?P<date>\d{4}-\d\d-\d\d)/$', 'proracun.views.treemap', name='proracun_treemap'),
     url(r'^p/proracun_(?P<po>(:?prihodki|odhodki))_(?P<leto>\d{4})_(?P<date>\d{4}-\d\d-\d\d)\.js$', 'proracun.views.treemap_js', name='proracun_treemap_js'),
     # areachart
-    url(r'^p/proracun_area_(?P<po>(:?prihodki|odhodki))_(?P<sifra>\d+)_(?P<inflacija>\d).js$', 'proracun.views.areachart_js', name='proracun_areachart_js'),
-    url(r'^p/a/(?P<po>(:?prihodki|odhodki))/(?P<inflacija>[012])/$', 'proracun.views.areachart', name='proracun_areachart'),
+    url(r'^stuff/20letSlovenije/proracun_area_(?P<po>(:?prihodki|odhodki))_(?P<sifra>\d+)_(?P<inflacija>...)\.js$', 'proracun.views.areachart_js', name='proracun_areachart_js'),
+    url(r'^stuff/20letSlovenije/(?P<po>(:?prihodki|odhodki))/(?P<inflacija>...)/$', 'proracun.views.areachart', name='proracun_areachart'),
 )
 
 
 if settings.DEBUG:
     urlpatterns += patterns('',
-        (r'^smedia/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}),
+        (r'^stuff/20letSlovenije/media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}),
     )
 
