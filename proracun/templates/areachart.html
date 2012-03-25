@@ -9,24 +9,72 @@
     <script type="text/javascript" src="{{ MEDIA_URL }}jit-2.0.1.js" ></script>
     <script type="text/javascript" src="{{ js_vizualizacija_url }}" ></script>
     
+{% if language == 'en' %}
+    <title>Visualisation of budget of Republic of Slovenia from 1992 to 2010</title>
+{% else %}
     <title>Vizualizacija proračuna Republike Slovenije od leta 1992 do leta 2010</title>
+{% endif %}
     
-    <meta name="title" content="Vizualizacija proračuna Republike Slovenije za leto {{ leto }}: {{ po }}" />
+    <meta name="title" content="Vizualizacija proračuna Republike Slovenije od leta 1992 do 2010" />
     <meta name="description" content="Kam gre naš denar? " />
     <link rel="image_src" href="prihodki.png" / >
     
     
     <script type="text/javascript">
       $(document).ready(function() {
-        var x = $("html").width()-30+'px';
-        var y = $("html").height()-150+'px';
+        timedResize = null;
+        visEmbedded = false;
+
+        $("#reval").change(function () {
+          var u = window.location.href;
+          u = u.replace(/\/{{ inflacija }}\//, '/' + $(this).val() + '/');
+          window.location.href = u;
+        });
+        $("#langdiv a").click(function (event) {
+          var u = window.location.href.split('#');
+          if (u.length == 2) {
+            window.location.href = this.href + '#' + u[1];
+            event.preventDefault();
+          }
+        });
+        $("#credit a").click(function (event) {
+          var u = window.location.href;
+          window.open(u);
+          event.preventDefault();
+        });
+        $(window).resize(function () {
+          if (timedResize) {
+            clearTimeout(timedResize);
+          }
+          timedResize = setTimeout(function () {
+            var x, y, lu;
+            $("#infovis").html("");
+            if ($("html").width() < 600) {
+              x = $("html").width()-15 + 'px';
+              y = $("html").height()-70 + 'px';
+              visEmbedded = true;
+            } else {
+              x = $("html").width()-30+'px';
+              y = $("html").height()-150+'px';
+              visEmbedded = false;
+            }
+            $("#infovis").css('width', x);
+            $("#infovis").css('height', y);
+            init();
+          }, 100);
+        });
+        var x, y;
+        if ($("html").width() < 600) {
+          x = $("html").width()-15+ 'px';
+          y = $("html").height()-70 + 'px';
+          visEmbedded = true;
+        } else {
+          x = $("html").width()-30+'px';
+          y = $("html").height()-150+'px';
+          visEmbedded = false;
+        }
         $("#infovis").css('width', x);
         $("#infovis").css('height', y);
-        $("#reval").change(function () {
-          var u = document.location.href;
-          u = u.replace(/\/{{ inflacija }}\//, '/' + $(this).val() + '/');
-          document.location.href = u;
-        });
         init();
       });
     
@@ -35,28 +83,63 @@
 
     <body>
       <div id="revaldiv">
+{% if language == 'en' %}
+        Adjust:
+        <select name="revalorizacija" id="reval">
+          <option {% if inflacija == "nic" %}selected="selected" {% endif %}value="nic">No</option>
+          <option {% if inflacija == "inf" %}selected="selected" {% endif %}value="inf">Inflation</option>
+          <option {% if inflacija == "bdp" %}selected="selected" {% endif %}value="bdp">GDP growth</option>
+        </select>
+{% else %}
         Revalorizacija:
         <select name="revalorizacija" id="reval">
           <option {% if inflacija == "nic" %}selected="selected" {% endif %}value="nic">Brez</option>
           <option {% if inflacija == "inf" %}selected="selected" {% endif %}value="inf">Glede na inflacijo</option>
           <option {% if inflacija == "bdp" %}selected="selected" {% endif %}value="bdp">Glede na rast BDP</option>
         </select>
+{% endif %}
+      </div>
+      <div id="langdiv">
+        <a href="{% url proracun_areachart  po inflacija %}"><img src="{{ MEDIA_URL }}sl.png" /></a>
+        <a href="{% url proracun_areachart 'en' po inflacija %}"><img src="{{ MEDIA_URL }}en.png" /></a>
       </div>
       <div>
         <div id="header">
+{% if language == 'en' %}
+          <div id="title">Budget of Republic of Slovenia through time {{ extratitle }}</div>
+          <span id="poswitch">
+{% if po == 'odhodki' %}<a href="{% url proracun_areachart 'en' 'prihodki' inflacija %}">income</a>{% else %}income{% endif %} |
+{% if po == 'prihodki' %}<a href="{% url proracun_areachart 'en' 'odhodki' inflacija %}">expenditure</a>{% else %}expenditure{% endif %}
+          </span>
+{% else %}
           <div id="title">Proračun Republike Slovenije skozi čas {{ extratitle }}</div>
+          <span id="poswitch">
 {% if po == 'odhodki' %}<a href="{% url proracun_areachart 'prihodki' inflacija %}">prihodki</a>{% else %}prihodki{% endif %} |
 {% if po == 'prihodki' %}<a href="{% url proracun_areachart 'odhodki' inflacija %}">odhodki</a>{% else %}odhodki{% endif %}
+          </span>
+{% endif %}
 <span class="fbshare"><a name="fb_share" type="button" href="http://www.facebook.com/sharer.php">Deli z ostalimi</a><script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script></span>
         </div>
       <div>
              <div id="infovis">&nbsp;</div>
       </div>
       <div id="footer">
-        Legenda: barve nimajo posebnega pomena | Levi klik na porabnika poveča pogled, desni klik pomanjša <br />
-        Na grafu so predstavljeni izvedeni proračun RS od leta 1992 do leta 2010. Zaradi preglednosti in predstavitve razmerij so skupaj združene A, B in C bilance.<br />
-        <a href="http://www.mf.gov.si/si/delovna_podrocja/tekoca_gibanja_v_javnih_financah/bilten_javnih_financ/">Vir podakov</a> <a href="{{ MEDIAURL }}vir/Drzavni_proracun_1992-2011.xls">(kopija)</a> | <a href="http://thejit.org/">JavaScript InfoVis Toolkit</a> | Izvedba: <a href="http://slo-tech.com/">Slo-Tech.com</a>
+{% if language == 'en' %}
+        Legend: colors have no special meaning | Left click on graph dives into entry, right click goes back<br />
+        Graph represents Republic of Slovenia budget realisation from 1992 till 2010. For readability and comparison reasons the A, B and C balance is merged together.
+{% else %}
+        Legenda: barve nimajo posebnega pomena | Levi klik na graf se poglobi postavko, desni klik povrne prejšnje stanje<br />
+        Na grafu so predstavljeni izvedeni proračun RS od leta 1992 do leta 2010. Zaradi preglednosti in predstavitve razmerij so skupaj združene A, B in C bilance.
+{% endif %}<br />
+        <a href="http://www.mf.gov.si/si/delovna_podrocja/tekoca_gibanja_v_javnih_financah/bilten_javnih_financ/">Vir podatkov</a> <a href="{{ MEDIA_URL }}vir/Drzavni_proracun_1992-2011.xls">(kopija)</a> | <a href="https://github.com/zejn/prrorracun/">Izvorna koda</a> | <a href="http://thejit.org/">JavaScript InfoVis Toolkit</a> | Izvedba: <a href="https://slo-tech.com/">Slo-Tech.com</a>
 
+      </div>
+      <div id="credit">
+{% if language == 'en' %}
+        <a href="https://static.slo-tech.com/stuff/20letSlovenije/en/" target="_blank">View full @ Slo-Tech</a>
+{% else %}
+        <a href="https://static.slo-tech.com/stuff/20letSlovenije/" target="_blank">Ogled v polni velikosti @ Slo-Tech</a>
+{% endif %}
       </div>
     <script type="text/javascript"> 
   var _gaq = _gaq || [];

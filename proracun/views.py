@@ -22,6 +22,12 @@ extratitles = {
 	'bdp': u'(revalorizirano glede na rast BDP)',
 }
 
+extratitles_en = {
+	'nic': u'',
+	'inf': u'(inflation adjusted)',
+	'bdp': u'(GDP growth adjusted)',
+}
+
 def treemap_js(request, po, leto, date):
 	handler = {
 		'prihodki': Prihodki(),
@@ -30,7 +36,8 @@ def treemap_js(request, po, leto, date):
 	
 	date = datetime.datetime.strptime(date, '%Y-%m-%d')
 	
-	records = [(p.sifra, p.naziv, p.znesek) for p in Postavka.objects.filter(proracun__proracunsko_leto=leto, proracun__datum_sprejetja=date)]
+	records = [(p.sifra, p.naziv, p.znesek) for p in Postavka.objects.filter(proracun__proracunsko_leto=leto, proracun__datum_sprejetja=date,
+		sifra__lt=10000)]
 	struct = handler(records)
 	json = simplejson.dumps(struct, ensure_ascii=True, use_decimal=True, indent=4)
 	
@@ -46,10 +53,11 @@ def treemap(request, po, leto, date):
 		}
 	return render_to_response("treemap.html", RequestContext(request, context))
 
-def areachart_js(request, po, sifra='0', inflacija='nic'):
+def areachart_js(request, po, sifra='0', inflacija='nic', language='sl'):
 	str_sifra = sifra
 	sifra = int(sifra)
 	init = bool(sifra == 0)
+	language = language and language or 'sl'
 	
 	# find last yearly budget
 	y = None
@@ -74,10 +82,15 @@ def areachart_js(request, po, sifra='0', inflacija='nic'):
 		return HttpResponse("", mimetype="text/javascript")
 	
 	if init:
-		postavke_names = dict([(i.sifra, i.naziv) for i in Postavka.objects.filter(proracun=Proracun.objects.all().order_by('-datum_sprejetja')[0], sifra__in=sifre)])
+		postavke_qs = Postavka.objects.filter(proracun=Proracun.objects.all().order_by('-datum_sprejetja')[0], sifra__in=sifre)
+		if language == 'en':
+			postavke_names = dict([(i.sifra, i.naziv_en) for i in postavke_qs])
+			title = u'Budget of Republic of Slovenia through time'
+		else:
+			postavke_names = dict([(i.sifra, i.naziv) for i in postavke_qs])
+			title = u'Proračun Republike Slovenije skozi čas'
 		colors = [handler.getColor(i) for i in sifre]
 		ordering = [(i, postavke_names[i]) for i in sifre]
-		title = u'Proračun Republike Slovenije skozi čas'
 	else:
 		
 		qs = Postavka.objects.filter(sifra__gte=sifra*10, sifra__lt=(sifra+1)*10)
@@ -88,11 +101,17 @@ def areachart_js(request, po, sifra='0', inflacija='nic'):
 			
 		try:
 			pst = Postavka.objects.get(sifra=sifra, proracun=Proracun.objects.all().order_by('-datum_sprejetja')[0])
-			title = u'%s %s' % (pst.sifra, pst.naziv)
+			if language == 'en':
+				title = u'%s %s' % (pst.sifra, pst.naziv_en)
+			else:
+				title = u'%s %s' % (pst.sifra, pst.naziv)
 		except Postavka.DoesNotExist:
 			title = ''
 		
-		postavke_names = dict([(i.sifra, i.naziv) for i in qs])
+		if language == 'en':
+			postavke_names = dict([(i.sifra, i.naziv_en) for i in qs])
+		else:
+			postavke_names = dict([(i.sifra, i.naziv) for i in qs])
 		colors = None
 		ordering = postavke_names.items()
 		ordering.sort()
@@ -127,23 +146,38 @@ def areachart_js(request, po, sifra='0', inflacija='nic'):
 		struct['color'] = colors
 	
 	json = simplejson.dumps(struct, ensure_ascii=True, use_decimal=True, indent=4)
+	if language == 'en':
+		extratitle = extratitles_en.get(inflacija, u'')
+	else:
+		extratitle = extratitles.get(inflacija, u'')
+	
 	context = {
 		'json': mark_safe(json),
 		'init': init,
 		'po': po,
 		'sifra': sifra,
-		'extratitle': extratitles.get(inflacija, u''),
+		'extratitle': extratitle,
+		'language': language,
 		'inflacija': inflacija,
 		}
 	return render_to_response("areachart.js", RequestContext(request, context), mimetype='text/javascript')
 
-def areachart(request, po, inflacija):
-	extratitle = extratitles.get(inflacija, u'')
+def areachart(request, po, inflacija, language='sl'):
+	language = language and language or 'sl'
+	if language == 'en':
+		extratitle = extratitles_en.get(inflacija, u'')
+	else:
+		extratitle = extratitles.get(inflacija, u'')
+	if language == 'en':
+		vizualizacija_url = reverse('proracun_areachart_js', args=(po, language, '0', inflacija))
+	else:
+		vizualizacija_url = reverse('proracun_areachart_js', args=(po, '0', inflacija))
 	context = {
 		'po': po,
 		'extratitle': extratitle,
 		'inflacija': inflacija,
-		'js_vizualizacija_url': reverse('proracun_areachart_js', args=(po,'0', inflacija)),
+		'language': language,
+		'js_vizualizacija_url': vizualizacija_url,
 		}
 	return render_to_response("areachart.html", RequestContext(request, context))
 

@@ -83,6 +83,7 @@ html, body {
 
 #footer {
   color: white;
+  padding-top: 10px;
   height: 50px;
 }
 
@@ -104,4 +105,54 @@ html, body {
   top: 0;
   right: 0;
 }
+
+#langdiv {
+  color: white;
+  font-size: 12px;
+  float: left;
+  padding: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#credit {
+  display: none;
+  position: absolute;
+  bottom: 3px;
+  width: 100%;
+}
+
+#credit a {
+  color: white;
+}
+
+@media screen and (max-width: 599px) {
+  #langdiv {
+    display: none;
+  }
+  #revaldiv {
+    display: none;
+  }
+  .fbshare {
+    display: none;
+  }
+  #footer {
+    display: none;
+  }
+  #credit {
+    display: block;
+  }
+  #poswitch {
+    display: none;
+  }
+  #header {
+    font-size: 13px;
+    font-weight: bold;
+  }
+}
+
+
+
+
 

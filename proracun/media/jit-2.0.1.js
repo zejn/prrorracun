@@ -10052,7 +10052,8 @@ $jit.ST.Plot.NodeTypes.implement({
           showLabels = config.showLabels,
           aggregates = config.showAggregates,
           label = config.Label,
-          prev = node.getData('prev');
+          prev = node.getData('prev'),
+	  prev2 = (parseInt(prev) - 1) + '';
 
       var ctx = canvas.getCtx(), border = node.getData('border');
       if (colorArray && dimArray && stringArray) {
@@ -10123,15 +10124,21 @@ $jit.ST.Plot.NodeTypes.implement({
           //console.log('ena', node.name, valLeft, valRight, node, valAcum);
           if(aggValue !== false) {
             labelpos[node.name] = y - acumLeft - config.labelOffset;
-            if (labelpos[node.name] + label.size > labelpos[prev] && labelpos[node.name] - label.size < labelpos[prev]) {
-              while (labelpos[node.name] + label.size > labelpos[prev] && labelpos[node.name] - label.size < labelpos[prev]) {
+            if (!visEmbedded)
+              prev2 = prev;
+            if (labelpos[node.name] + label.size > labelpos[prev2] && labelpos[node.name] - label.size < labelpos[prev2]) {
+              while (labelpos[node.name] + label.size > labelpos[prev2] && labelpos[node.name] - label.size < labelpos[prev2]) {
                 labelpos[node.name] = labelpos[node.name] - 1;
               }
             }
-            ctx.fillText(aggValue !== true? aggValue : valAcum, x, labelpos[node.name] - label.size/2, width*2);
+            if (!visEmbedded || parseInt(node.name) % 2 == 0) {
+              ctx.fillText(aggValue !== true? aggValue : valAcum, x, labelpos[node.name] - label.size/2, width*2);
+            }
           }
           if(showLabels(node.name, valLeft, valRight, node)) {
-            ctx.fillText(node.name, x, y + label.size/2 + config.labelOffset);
+            if (!visEmbedded || parseInt(node.name) % 2 == 0) {
+              ctx.fillText(node.name, x, y + label.size/2 + config.labelOffset);
+            }
           }
           ctx.restore();
         }
@@ -10147,21 +10154,27 @@ $jit.ST.Plot.NodeTypes.implement({
             ctx.textBaseline = 'middle';
             var aggValue = aggregates(node.name, valRight, valRight, node, valRight);
             if(aggValue !== false) {
+                if (!visEmbedded) {
+                  prev2 = prev;
+                }
                 labelposR[node.name] = y - acumRight - config.labelOffset;
-                if (labelposR[node.name] + label.size > labelposR[prev] && labelposR[node.name] - label.size < labelposR[prev]) {
-                  while (labelposR[node.name] + label.size > labelposR[prev] && labelposR[node.name] - label.size < labelposR[prev]) {
+                if (labelposR[node.name] + label.size > labelposR[prev2] && labelposR[node.name] - label.size < labelposR[prev2]) {
+                  while (labelposR[node.name] + label.size > labelposR[prev2] && labelposR[node.name] - label.size < labelposR[prev2]) {
                     labelposR[node.name] = labelposR[node.name] - 1;
                   }
                 }
-                ctx.fillText(aggValue !== true? aggValue : valAcum, x + width, labelposR[node.name] - label.size/2, width*2);
+                if (!visEmbedded || parseInt(node.name) % 2 == 1) {
+                  ctx.fillText(aggValue !== true? aggValue : valAcum, x + width, labelposR[node.name] - label.size/2, width*2);
+                }
             }
             if(showLabels(node.name, valLeft, valRight, node)) {
-              ctx.fillText(node.getData('next'), x + width, y + label.size/2 + config.labelOffset);
+              if (!visEmbedded || parseInt(node.name) % 2 == 1) {
+                ctx.fillText(node.getData('next'), x + width, y + label.size/2 + config.labelOffset);
+              }
             }
             ctx.restore();
           }
         }
-        
 
        }
     },
@@ -10274,12 +10287,14 @@ $jit.AreaChart = new Class({
         type: 'Native',
         onClick: function(node, eventInfo, evt) {
           if(!config.filterOnClick && !config.Events.enable) return;
+          if (visEmbedded) return;
           var elem = eventInfo.getContains();
           if(elem) config.filterOnClick && that.filter(elem.name);
           config.Events.enable && config.Events.onClick(elem, eventInfo, evt);
         },
         onRightClick: function(node, eventInfo, evt) {
           if(!config.restoreOnRightClick && !config.Events.enable) return;
+          if (visEmbedded) return;
           if (config.restoreOnRightClick) {
             that.restore();
           } else {

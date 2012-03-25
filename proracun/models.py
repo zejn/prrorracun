@@ -29,6 +29,7 @@ class Postavka(models.Model):
 	proracun = models.ForeignKey(Proracun)
 	sifra = models.IntegerField(max_length=5, db_index=True)
 	naziv = models.CharField(max_length=1000)
+	naziv_en = models.CharField(max_length=1000)
 	znesek = models.DecimalField(max_digits=20, decimal_places=2)
 
 

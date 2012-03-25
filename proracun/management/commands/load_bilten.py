@@ -71,10 +71,12 @@ class Command(BaseCommand):
 					#print 'eeesifra', rec
 					sifra = 0
 				naziv = rec[2].decode('utf-8')
+				naziv_en = rec[3].decode('utf-8')
 				print 'Loading:', naziv
 				pst_tmpl = {
 					'sifra': sifra,
 					'naziv': naziv,
+					'naziv_en': naziv_en,
 				}
 				zneski = [i for i in zip(leta2, rec) if i[0] != None]
 				for leto, znesek in zneski:
@@ -104,7 +106,7 @@ class Command(BaseCommand):
 			
 			
 			for pr in proracuni.itervalues():
-				Postavka(proracun=pr, sifra=57, naziv=u'Plačila obresti', znesek=0).save()
+				Postavka(proracun=pr, sifra=57, naziv=u'Plačila obresti', naziv_en=u'Interest payments', znesek=0).save()
 			print 'Postprocessing...'
 			from django.db import connection
 			cur = connection.cursor()
@@ -121,7 +123,7 @@ class Command(BaseCommand):
 				) AS a WHERE a.proracun_id = b.proracun_id AND b.sifra = 57
 			) AS N WHERE proracun_postavka.proracun_id = N.proracun_id AND proracun_postavka.sifra = 57;''')
 			
-			cur.execute('''UPDATE proracun_postavka SET naziv = naziv || ' (' || sifra || ')', sifra = regexp_replace(sifra::text, '^40([34])', '57\\\\1')::integer WHERE sifra::text ~ E'^40[34]';''')
+			cur.execute('''UPDATE proracun_postavka SET naziv = naziv || ' (' || sifra || ')', naziv_en = naziv_en || ' (' || sifra || ')', sifra = regexp_replace(sifra::text, '^40([34])', '57\\\\1')::integer WHERE sifra::text ~ E'^40[34]';''')
 			cur.execute('''UPDATE proracun_postavka SET znesek = 0.0 WHERE id IN (SELECT a.id FROM proracun_postavka a, proracun_proracun b WHERE a.proracun_id = b.id AND sifra::text ~ E'^50.$');''')
 			
 		# end function body

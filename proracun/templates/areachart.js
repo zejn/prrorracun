@@ -20,7 +20,11 @@ var labelType, useGradients, nativeTextSupport, animate, labelpos = {}, labelpos
 function add_subchart(postavka, onComplete) {
     var script = document.createElement('script');
     script.type = 'text/javascript';
+{% if language == 'en' %}
+    script.src = '{% url proracun_areachart_js po language 123456789 inflacija %}'.replace('123456789', postavka);
+{% else %}
     script.src = '{% url proracun_areachart_js po 123456789 inflacija %}'.replace('123456789', postavka);
+{% endif %}
     $(document.body).append(script);
     onComplete && onComplete();
 }
