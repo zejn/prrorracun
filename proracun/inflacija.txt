@@ -10,9 +10,22 @@ Pomen indeksov:
 	meseca glede na enako obdobje v preteklem letu.
 
 
-Zajeto obdobje: januar 1991 - julij 2011
+Zajeto obdobje: januar 1991 - avgust 2012
 
 	Meseèni indeks	Letni indeks	Povpreèni letni<br>indeks	
+avgust 2012	100,7	102,9	102,5	
+julij 2012	99,0	102,4	102,5	
+junij 2012	99,4	102,3	102,5	
+maj 2012	100,6	102,4	102,5	
+april 2012	101,1	102,6	102,5	
+marec 2012	101,0	102,3	102,5	
+februar 2012	100,6	102,9	102,6	
+januar 2012	99,5	102,3	102,3	
+december 2011	99,4	102,0	101,8	
+november 2011	100,3	102,7	101,8	
+oktober 2011	100,7	102,7	101,7	
+september 2011	100,6	102,1	101,6	
+avgust 2011	100,3	100,9	101,5	
 julij 2011	98,9	100,9	101,6	
 junij 2011	99,5	101,3	101,7	
 maj 2011	100,8	102,2	101,8	
@@ -728,10 +741,6 @@ januar 1991	105,8	151,2	151,2
 	
 	
 	
-september	99,8	99,9	100,8	
-december 2009	99,5	101,8	100,9	
-december 2009	99,5	101,8	100,9	
-december 2009	99,5	101,8	100,9	
 
 
 © Statisticni urad Republike Slovenije.
