@@ -6,7 +6,7 @@ Tu se nahajajo napol magične skripte, ki iz PDF datotek izluščijo tekst. So z
 
 convert pretvori PDF v tekst::
 
-  python 01_convert.py II_posebni.pdf > en_proracun.csv
+  python convert.py II_posebni.pdf > en_proracun.csv
 
 razcepi združene cifre v tretjem polju::
 
@@ -21,8 +21,8 @@ Drugo
 -----
 
 postavke.py
-  so popravek, da se namesto okrajšav proračunskih postavk (imena niso vedno konsistentna) prikaže polno ime.
+  Popravek, da se namesto okrajšav proračunskih postavk (imena niso vedno konsistentna) prikaže polno ime.
 
 scraperwiki.py
-  python modul za pretvorbo PDF v XML.
-
+  Python modul za pretvorbo PDF v XML.
+  Zahteva nameščen paket poppler-utils.
