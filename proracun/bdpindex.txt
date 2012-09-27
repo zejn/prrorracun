@@ -1,13 +1,14 @@
 BRUTO DOMAÈI PROIZVOD, LETNI PODATKI
 Vrednosti so v tekoèih cenah. Vrednosti v stolpcu "mio EUR*" so do leta 1988 v 1000 dinarjih, od 1989 do 1990 v mio dinarjih in od 1991 do 2006 v mio SIT.
 
-Zajeto obdobje: 1991 - 2010
+Zajeto obdobje: 1991 - 2011
 
 	mio EUR*	mio USD	mio EUR	Realna rast<br>v %	
-2010	35.974	47.690	35.974	1,2	
-2009	35.297	49.233	35.297	-8,1	
-2008	37.280	54.831	37.280	3,7	
-2007	34.550	47.351	34.550	6,8	
+2011	36.172	50.351	36.172	0,6	
+2010	35.607	47.204	35.607	1,2	
+2009	35.556	49.594	35.556	-7,8	
+2008	37.244	54.779	37.244	3,4	
+2007	34.594	47.411	34.594	7,0	
 2006	7.439.623	38.945	31.050	5,8	
 2005	6.883.002	35.718	28.723	4,0	
 2004	6.509.744	33.838	27.253	4,4	
