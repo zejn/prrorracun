@@ -8,6 +8,10 @@ convert pretvori PDF v tekst::
 
   python convert.py II_posebni.pdf > en_proracun.csv
 
+csvcleanup pocisti header in footer iz vnosov v CSV datotek::
+
+  python csvcleanup.py en_proracun.csv > en_proracun-2.csv
+
 razcepi združene cifre v tretjem polju::
 
   python zr.py en_proracun.csv
@@ -25,4 +29,4 @@ postavke.py
 
 scraperwiki.py
   Python modul za pretvorbo PDF v XML.
-  Zahteva nameščen paket poppler-utils.
+  Zahteva nameščen paket poppler-utils in/ali python-pdfminer

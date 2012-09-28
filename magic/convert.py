@@ -26,10 +26,9 @@ def clean_text(s):
         ('&#352;', u'Š'.encode('utf-8')),
         ('&#381;', u'Ž'.encode('utf-8')),
         ('&#160;', u' '.encode('utf-8')),
+        ('&#64830;', u'('.encode('utf-8')),
+        ('&#64831;', u')'.encode('utf-8')),
         ]:
-        #('', u''.encode('utf-8')),
-        #('', u''.encode('utf-8')),
-        #('', u''.encode('utf-8')),
         s = s.replace(i[0], i[1])
     return s
 
