@@ -24,7 +24,9 @@ def clean_text(s):
         ('&#382;', u'ž'.encode('utf-8')),
         ('&#268;', u'Č'.encode('utf-8')),
         ('&#352;', u'Š'.encode('utf-8')),
-        ('&#381;', u'Ž'.encode('utf-8')),]:
+        ('&#381;', u'Ž'.encode('utf-8')),
+        ('&#160;', u' '.encode('utf-8')),
+        ]:
         #('', u''.encode('utf-8')),
         #('', u''.encode('utf-8')),
         #('', u''.encode('utf-8')),
@@ -40,7 +42,8 @@ pdfurl = "http://www.kiberpipa.org/~hruske/stuff/SP2011_II_1.pdf"
 #pdfdata = urllib.urlopen(pdfurl).read()
 
 pdfdata = open(sys.argv[1]).read()
-pdfxml = scraperwiki.pdftoxml(pdfdata)
+#pdfxml = scraperwiki.pdftoxml(pdfdata)
+pdfxml = scraperwiki.pdf2xml(pdfdata)
 root = lxml.etree.fromstring(pdfxml)
 
 fontspecs = { }
