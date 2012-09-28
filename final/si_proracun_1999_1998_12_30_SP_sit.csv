@@ -1,0 +1,233 @@
+"I."	"SKUPAJ PRIHODKI (70+71+72+73+74)"	930884542
+	"TEKOČI PRIHODKI (70+71)"	930884542
+70	"DAVČNI PRIHODKI (700+701+702+703+704+705+706)"	876656500
+700	"DAVKI NA DOHODEK IN DOBIČEK"	200779000
+7000	"Dohodnina"	157606000
+7001	"Davek od dobička pravnih oseb"	43173000
+7002	"Drugi davki na dohodek in dobiček"	0
+701	"PRISPEVKI ZA SOCIALNO VARNOST"	5709700
+7010	"Prispevki zaposlenih"	3330320
+7011	"Prispevki delodajalcev"	2001420
+7012	"Prispevki samozaposlenih"	322265
+7013	"Ostali prispevki za socialno varnost"	55695
+702	"DAVKI NA PLAČILNO LISTO IN DELOVNO SILO"	49231200
+7020	"Davek na izplačane plače"	44900000
+7021	"Posebni davek na določene prejemke"	4331200
+703	"DAVKI NA PREMOŽENJE"	5955000
+7030	"Davki na nepremičnine"	0
+7031	"Davki na premičnine"	0
+7032	"Davki na dediščine in darila"	0
+7033	"Davki na promet nepremičnin in na finanč. premož."	5955000
+704	"DOMAČI DAVKI NA BLAGO IN STORITVE"	570873000
+7040	"Splošni prometni davki, davki na dodano vrednost"	527935000
+7041	"Drugi davki na blago in storitve"	17133000
+7042	"Trošarine (akcize)"	0
+7043	"Dobički fiskalnih monopolov"	0
+7044	"Davki na posebne storitve"	8325000
+7045	"Dovoljenja za poslovanje in za opravljanje dejavnosti"	0
+7046	"Pristojbine za motorna vozila"	13740000
+7047	"Drugi davki na uporabo blaga ali opravljanje storitev"	3740000
+705	"DAVKI NA MEDNARODNO TRGOVINO IN TRANSAKCIJE"	44108600
+7050	"Carine"	42645500
+7051	"Druge uvozne dajatve"	1463100
+7052	"Izvozne dajatve"	0
+7053	"Dobički izvoznih in uvoznih monopolov"	0
+7054	"Dobički od menjave tujih valut"	0
+7055	"Davki na menjavo tujih valut"	0
+7056	"Drugi davki na mednarodno trgovino in transakcije"	0
+706	"DRUGI DAVKI"	0
+7060	"Drugi davki"	0
+71	"NEDAVČNI PRIHODKI (710+711+712+713+714)"	54228042
+710	"UDELEŽBA NA DOBIČKU IN DOHODKU OD PREMOŽENJA"	14840000
+7100	"Udeležba na dobičku javnih podjetij in finanč. Institucij"	6000000
+7101	"Prihodki od udeležbe na dobičku drugih podjetij"	4000000
+7102	"Prihodki od obresti"	2840000
+7103	"Prihodki od premoženja"	2000000
+711	"TAKSE IN PRISTOJBINE"	16374500
+7110	"Sodne takse"	7765000
+7111	"Upravne takse"	8609500
+712	"DENARNE KAZNI"	7554000
+7120	"Denarne kazni"	7554000
+713	"PRIHODKI OD PRODAJE BLAGA IN STORITEV"	7375000
+7130	"Prihodki od prodaje blaga in storitev"	7375000
+714	"DRUGI NEDAVČNI PRIHODKI"	8084542
+7140	"Dodatni prostovoljni prispevki za socialno varnost"	0
+7141	"Drugi nedavčni prihodki"	8084542
+72	"KAPITALSKI PRIHODKI (720+721+722)"	0
+720	"PRIHODKI OD PRODAJE OSNOVNIH SREDSTEV"	0
+7200	"Prihodki od prodaje zgradb in prostorov"	0
+7201	"Prihodki od prodaje prevoznih sredstev"	0
+7202	"Prihodki od prodaje opreme"	0
+7203	"Prihodki od prodaje drugih osnovnih sredstev"	0
+721	"PRIHODKI OD PRODAJE ZALOG"	0
+7210	"Prihodki od prodaje blagovnih rezerv"	0
+7211	"Prihodki od prodaje drugih zalog"	0
+722	"PRIHODKI OD PRODAJE ZEMLJIŠČ IN NEMATERIALNEGA PREMOŽENJA"	0
+7220	"Prihodki od prodaje kmetijskih zemljišč in gozdov"	0
+7221	"Prihodki od prodaje stavbnih zemljišč"	0
+7222	"Prihodki od prodaje nematerialnega premoženja"	0
+73	"PREJETE DONACIJE (730+731)"	0
+730	"PREJETE DONACIJE IZ DOMAČIH VIROV"	0
+7300	"Prejete donacije iz domačih virov za tekočo porabo"	0
+7301	"Prejete donacije iz domačih virov za investicije"	0
+7302	"Sredstva kupnin iz naslova privatizacije podjetij"	0
+731	"PREJETE DONACIJE IZ TUJINE"	0
+7310	"Prejete donacije iz tujine za tekočo porabo"	0
+7311	"Prejete donacije iz tujine za investicije"	0
+74	"TRANSFERNI PRIHODKI"	0
+740	"TRANSFERNI PRIHODKI IZ DRUGIH JAVNOFINANČNIH INSTITUCIJ"	0
+7401	"Prejeta sredstva iz proračunov lokalnih skupnosti"	0
+7402	"Prejeta sredstva iz skladov socialnega zavarovanja"	0
+7403	"Prejeta sredstva iz drugih javnih skladov"	0
+"II."	"SKUPAJ ODHODKI (40+41+42+43)"	960664542
+40	"TEKOČI ODHODKI (400+401+402+403+404+409)"	283532694
+400	"PLAČE IN DRUGI IZDATKI ZAPOSLENIM"	105090104
+4000	"Plače in dodatki"	88890670
+4001	"Regres za letni dopust"	3018305
+4002	"Povračila in nadomestila"	8346118
+4003	"Sredstva za delovno uspešnost"	2099991
+4004	"Sredstva za nadurno delo"	1641434
+4005	"Plače za delo po pogodbi"	81662
+4009	"Drugi izdatki zaposlenim"	1011924
+401	"PRISPEVKI DELODAJALCEV ZA SOCIALNO VARNOST"	16177329
+4010	"Prispevki za pokojninsko in invalidsko zavarovanje"	9804268
+4011	"Prispevki za zdravstveno zavarovanje"	6228414
+4012	"Prispevki za zaposlovanje"	54250
+4013	"Prispevki za porodniško varstvo"	90397
+402	"IZDATKI ZA BLAGO IN STORITVE"	97437137
+4020	"Pisarniški in splošni material in storitve"	13667308
+4021	"Posebni materiali in storitve"	17066826
+4022	"Energija, voda, komunalne storitve in komunikacije"	6587214
+4023	"Prevozni stroški in storitve"	3254387
+4024	"Izdatki za službena potovanja"	3669523
+4025	"Tekoče vzdrževanje"	19828300
+4026	"Najemnine in zakupnine"	7370161
+4027	"Kazni in odškodnine"	2477507
+4029	"Drugi operativni odhodki"	23515911
+403	"PLAČILA DOMAČIH OBRESTI"	32981493
+4030	"Plačila obresti od kreditov Banki Slovenije"	0
+4031	"Plačila obresti od kreditov poslovnim bankam"	4505085
+4032	"Plačila obresti od kreditov drugim finančnim instituc"	0
+4033	"Plačila obresti od kreditov drugim kreditodajalcem"	207737
+4034	"Plačila obresti od vrednostnih papirjev"	28268671
+404	"PLAČILA OBRESTI V TUJINO"	22670518
+4040	"Plačila obresti mednarodnim finančnim institucijam"	4093451
+4041	"Plačila obresti tujim vladam"	403569
+4042	"Plačila obresti tujim bankam in finanč. instituc."	1788199
+4043	"Plačila obresti drugim tujim kreditodajalcem"	16385299
+409	"SREDSTVA, IZLOČENA V REZERVE"	9176113
+4090	"Tekoča proračunska rezerva"	2676113
+4091	"Rezerva za naravne nesreče"	6500000
+4092	"Druge rezerve"	
+41	"TEKOČI TRANSFERI (410+411+412+413+414)"	566258355
+410	"SUBVENCIJE"	52369402
+4100	"Subvencije javnim podjetjem"	18853336
+4101	"Subvencije finančnim institucijam"	0
+4102	"Subvencije privatnim podjetjem in zasebnikom"	35516066
+411	"TRANSFERI POSAMEZNIKOM IN GOSPODINJSTVOM"	139132768
+4110	"Transferi nezaposlenim"	24135426
+4111	"Družinski prejemki in starševska nadomestila"	55806816
+4112	"Transferi za zagotavljanje socialne varnosti"	13850779
+4113	"Transferi vojnim invalidom, veteranom in žrtvam vojn."	22151855
+4114	"Pokojnine"	0
+4115	"Nadomestila plač"	15956
+4116	"Boleznine"	0
+4117	"Štipendije"	16227334
+4119	"Drugi transferi posameznikom"	6944602
+412	"TRANSFERI NEPROFITNIM ORGANIZACIJAM IN USTANOVAM"	6188894
+4120	"Tekoči transferi neprofitnim organizac. in ustanovam"	6188894
+413	"DRUGI TEKOČI DOMAČI TRANSFERI"	366480735
+4130	"Tekoči transferi drugim ravnem države"	26901913
+4131	"Tekoči transferi v skladu socialnega zavarovanja"	149684544
+4132	"Tekoči transferi v druge javne sklade in agencije"	2692590
+4133	"Tekoči transferi v javne zavode in druge izvajalce javnih služb"	187201688
+413300	"- Sredstva za plače in druge izdatke zaposlenim v javnih zavodih in drugih izvajalcih javnih služb"	125640631
+413301	"- Sredstva za prispevke delodajalca javnim zavodom in drugim izvajalcem javnih služb"	22275745
+413302	"- Izdatki za blago in storitve javnim zavodom in drugim izvajalcem javnih služb"	39285312
+414	"TEKOČI TRANSFERI V TUJINO"	2086556
+4140	"Tekoči transferi mednarodnim institucijam"	132830
+4141	"Tekoči transferi tujim vladam in vladnim institucijam"	0
+4142	"Tekoči transferi neprofitnim organizacijam v tujini"	525244
+4143	"Drugi tekoči transferi v tujino"	1428482
+42	"INVESTICIJSKI ODHODKI (420)"	58462013
+420	"NAKUP IN GRADNJA OSNOVNIH SREDSTEV"	58462013
+4200	"Nakup zgradb in prostorov"	2908314
+4201	"Nakup prevoznih sredstev"	1227866
+4202	"Nakup opreme"	14062519
+4203	"Nakup drugih osnovnih sredstev"	376323
+4204	"Novogradnje, rekonstrukcije in adaptacije"	22523551
+4205	"Investicijsko vzdrževanje in obnove"	11067256
+4206	"Nakup zemljišč in naravnih bogastev"	1502592
+4207	"Nakup nematerialnega premoženja"	16760
+4208	"Študije izvedljivosti projektov in projektna dokument"	4711812
+4029	"Nakup blagovnih rezerv in intervencijskih zalog"	65020
+43	"INVESTICIJSKI TRANSFERI (430)"	52411480
+430	"INVESTICIJSKI TRANSFERI"	52411480
+4300	"Investicijski transferi drugim ravnem države"	7652315
+4301	"Kapitalski transferi javnim skladom in agencijam"	1709950
+4302	"Invensticijski transferi neprofitnim organizacijam"	1065913
+4303	"Investicijski transferi javnim podjetjem (vključno (DARS)"	33544009
+4304	"Kapitalski transferi finančnim institucijam"	3000
+4305	"Investicijski transferi privatnim podjetjem in zasebnikom"	3607372
+4306	"Investicijski transferi posameznikom"	17650
+4307	"Investicijski transferi javnim zavodom in javn. gosp. službam"	4811271
+4308	"Investicijski transferi v tujino"	0
+"III."	"PRORAČUNSKI PRESEŽEK (PRORAČUNSKI PRIMANJKLJAJ) (I. - II.)"	-29780000
+"III/1."	"III/ PRIMARNI PRESEŽEK (PRIMANJKLJAJ) (I. - 7102)-(II. - 403 – 404)"	23032011
+"III/2."	"III/ TEKOČI PRESEŽEK (PRIMANJKLJAJ) (70 + 71) - (40 +41)"	81093493
+"IV."	"IV. PREJETA VRAČILA DANIH POSOJIL IN PRODAJA KAPITALSKIH DELEŽEV (750+751)"	5996704
+750	"PREJETA VRAČILA DANIH POSOJIL"	996704
+7500	"Prejeta vračila danih posojil od posameznikov"	0
+7501	"Prejeta vračila danih posojil od javnih podjetij"	174162
+7502	"Prejeta vračila danih posojil od finančnih institucij"	0
+7503	"Prejeta vračila posojil od privatnih podjetij in zasebn."	822542
+7504	"Prejeta vračila danih posojil od drugih ravni države"	0
+7505	"Prejeta vračila danih posojil iz tujine"	0
+751	"PRODAJA KAPITALSKIH DELEŽEV"	5000000
+7510	"Prodaja kapitalskih deležev v javnih podjetjih"	0
+7511	"Prodaja kapitalskih deležev v finančnih institucijah"	0
+7512	"Prodaja kapitalskih deležev v privatnih podjetjih"	5000000
+"V."	"DANA POSOJILA IN POVEČANJE KAPITALSKIH DELEŽEV (440+441)"	9008421
+440	"DANA POSOJILA"	5266289
+4400	"Dana posojila posameznikom"	43438
+4401	"Dana posojila javnim skladom"	0
+4402	"Dana posojila javnim podjetjem"	0
+4403	"Dana posojila finančnim institucijam"	0
+4404	"Dana posojila privatnim podjetjem in zasebnikom"	5222851
+4405	"Dana posojila drugim ravnem države"	0
+4406	"Dana posojila v tujino"	0
+441	"POVEČANJE KAPITALSKIH DELEŽEV"	3742132
+4410	"Povečanje kapitalskih deležev v javnih podjetjih"	3200000
+4411	"Povečanje kapitalskih deležev v finančnih situacijah"	100000
+4412	"Povečanje kapitalskih deležev v privatnih podjetjih"	150000
+4413	"Skupna vlaganja (joint ventures)"	0
+4414	"Povečanje kapitalskih deležev v tujino"	292132
+"VI."	"VI. PREJETA MINUS DANA POSOJILA IN SPREMEMBE KAPITALSKIH DELEŽEV (IV. - V.)"	-3011717
+"VII."	"VII SKUPNI PRESEŽEK (PRIMANJKLJAJ) (I. + IV.) - (II. + V.)"	-32791717
+"VIII."	"ZADOLŽEVANJE (500+501)"	108276331
+500	"DOMAČE ZADOLŽEVANJE"	
+5000	"Najeti krediti pri Banki Slovenije"	
+5001	"Najeti krediti pri poslovnih bankah"	
+5002	"Najeti krediti pri drugih finančnih institucijah"	
+5003	"Najeti krediti pri drugih domačih kreditodajalcih"	
+5004	"Sredstva, pridobljena z izdajo vrednostnih papirjev"	
+501	"ZADOLŽEVANJE V TUJINI"	
+5010	"Najeti krediti po mednarodnih finančnih institucijah"	
+5011	"Najeti krediti pri tujih vladah"	
+5012	"Najeti krediti pri tujih poslovnih bankah in finanč. instit."	
+5013	"Najeti krediti pri drugih tujih kreditodajalcih"	
+5014	"Sredstva, pridobljena z izdajo vrednostnih papirjev"	
+"IX."	"ODPLAČILA DOLGA (550+551)"	74484614
+550	"ODPLAČILA DOMAČEGA DOLGA"	57631517
+5500	"Odplačila kreditov Banki Slovenije"	0
+5501	"Odplačila kreditov poslovnim bankam"	23959345
+5502	"Odplačila kreditov drugim finančnim institucijam"	0
+5503	"Odplačila kreditov drugim domačim kreditodajalcem"	442887
+5504	"Odplačila glavnice vrednostnih papirjev"	33229285
+551	"ODPLAČILA DOLGA V TUJINO"	16853097
+5510	"Odplačila dolga mednarodnim finančnim institucijam"	4067405
+5511	"Odplačila dolga tujim vladam"	5737221
+5512	"Odplačila dolga tujim bankam in finančnim institucijam"	4012000
+5513	"Odplačila dolga drugim tujim kreditodajalcem"	3036471
+"X."	"NETO ZADOLŽEVANJE (VIII.-IX.)"	33791717
+"XI."	"POVEČANJE (ZMANJŠANJE) SREDSTEV NA RAČUNIH (VII.-X.)"	1000000

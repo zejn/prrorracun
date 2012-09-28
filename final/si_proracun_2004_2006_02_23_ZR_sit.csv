@@ -1,0 +1,249 @@
+"I."	"SKUPAJ PRIHODKI (70+71+72+73+74+78)"	1555205845	0	1515288362	"97,43"	-0
+	"TEKOČI PRIHODKI (70+71)"	1470985788	0	1468175950	"99,81"	-0
+70	"DAVČNI PRIHODKI"	1371008508	0	1365468486	"99,60"	-0
+700	"Davki na dohodek in dobiček"	364493334	0	372999715	"102,33"	-0
+7000	"Dohodnina"	247032735	0	248645102	"100,65"	-0
+7001	"Davek od dohodkov pravnih oseb"	117460600	0	124354613	"105,87"	-0
+701	"Prispevki za socialno varnost"	9565291	0	9400037	"98,27"	-0
+7010	"Prispevki zaposlenih"	5273723	0	5315191	"100,79"	-0
+7011	"Prispevki delodajalcev"	3587701	0	3439960	"95,88"	-0
+7012	"Prispevki samozaposlenih"	497467	0	472103	"94,90"	-0
+7013	"Ostali prispevki za socialno varnost"	206399	0	172784	"83,71"	-0
+702	"Davki na plačilno listo in delovno silo"	118401280	0	117676008	"99,39"	-0
+7020	"Davek na izplačane plače"	112218728	0	113189082	"100,86"	-0
+7021	"Posebni davek na določene prejemke"	6182552	0	4486926	"72,57"	-0
+703	"Davki na premoženje"	389278	0	2814613	"723,03"	-0
+7033	"Davki na promet nepremičnin in na finančno premoženje"	389278	0	2814613	"723,03"	-0
+704	"Domači davki na blago in storitve"	850825175	0	835763456	"98,23"	-0
+7040	"Davek na dodano vrednost"	562587455	0	539317134	"95,86"	-0
+7041	"Drugi davki na blago in storitve"	13670150	0	14100685	"103,15"	-0
+7042	"Trošarine (akcize)"	212833500	0	217600103	"102,24"	-0
+7044	"Davki na posebne storitve"	22196990	0	23580658	"106,23"	-0
+7046	"Letna povračila za uporabo cest"	22437000	0	20911732	"93,20"	-0
+7047	"Drugi davki na uporabo blaga in storitev"	8785000	0	8839841	"100,62"	-0
+7048	"Davki na motorna vozila"	8315080	0	11413304	"137,26"	-0
+705	"Davki na mednarodno trgovino in transakcije"	24075350	0	19338538	"80,33"	-0
+7050	"Carine"	22879824	0	18075297	"79,00"	-0
+7051	"Druge uvozne dajatve"	1195526	0	1263241	"105,66"	-0
+706	"Drugi davki"	3258800	0	7476120	"229,41"	-0
+7060	"Drugi davki"	3258800	0	7476120	"229,41"	-0
+71	"NEDAVČNI PRIHODKI"	99977280	0	102707464	"102,73"	-0
+710	"Udeležba na dobičku in dohodki od premoženja"	33637951	0	29523192	"87,77"	-0
+7100	"Prihodki od udeležbe na dobičku in dividend ter presežkov prihodkov nad odhodki"	9932000	0	3392699	"34,16"	-0
+7101	"***Prihodki od udeležbe na dobičku in dividend drugih podjetij in finančnih institucij"	16000	0	7639682	-0	-0
+7102	"Prihodki od obresti"	8150000	0	9137395	"112,12"	-0
+7103	"Prihodki od premoženja"	15539951	0	9353417	"60,19"	-0
+711	"Takse in pristojbine"	20949660	0	18416932	"87,91"	-0
+7110	"Sodne takse"	8031760	0	7654020	"95,30"	-0
+7111	"Upravne takse in pristojbine"	12917900	0	10762912	"83,32"	-0
+712	"Denarne kazni"	8269500	0	8025422	"97,05"	-0
+7120	"Denarne kazni"	8269500	0	8025422	"97,05"	-0
+713	"Prihodki od prodaje blaga in storitev"	3100000	0	2634090	"84,97"	-0
+7130	"Prihodki od prodaje blaga in storitev"	3100000	0	2634090	"84,97"	-0
+714	"Drugi nedavčni prihodki"	34020169	0	44107829	"129,65"	-0
+7140	"Drugi prostovoljni prispevki za socialno varnost"	52	0	0	"0,00"	-0
+7141	"Drugi nedavčni prihodki"	34020117	0	44107829	"129,65"	-0
+72	"KAPITALSKI PRIHODKI"	3740500	0	2254836	"60,28"	-0
+720	"Prihodki od prodaje osnovnih sredstev"	3190830	0	2242857	"70,29"	-0
+7200	"Prihodki od prodaje zgradb in prostorov"	3056061	0	2142658	"70,11"	-0
+7201	"Prihodki od prodaje prevoznih sredstev"	72930	0	72573	"99,51"	-0
+7202	"Prihodki od prodaje opreme"	57456	0	5707	"9,93"	-0
+7203	"Prihodki od prodaje drugih osnovnih sredstev"	4382	0	21918	"500,15"	-0
+722	"Prihodki od prodaje zemljišč in neopredmetenih dolgoročnih sredstev"	549670	0	11979	"2,18"	-0
+7220	"Prihodki od prodaje kmetijskih zemljišč in gozdov"	549670	0	0	"0,00"	-0
+7221	"Prihodki od prodaje stavbnih zemljišč"	0	0	11979	-0	-0
+73	"PREJETE DONACIJE"	10430	0	917783	-0	-0
+730	"Prejete donacije iz domačih virov"	10430	0	7041	"67,51"	-0
+7300	"Prejete donacije in darila od domačih pravnih oseb"	8865	0	7041	"79,43"	-0
+7301	"Prejete donacije in darila od domačih fizičnih oseb"	1565	0	0	"0,00"	-0
+731	"Prejete donacije iz tujine"	0	0	771660	-0	-0
+7310	"Prejete donacije in darila od tujih nevladnih organizacij in fundacij"	0	0	512967	-0	-0
+7311	"Prejete donacije in darila od tujih vlad in vladnih institucij"	0	0	250809	-0	-0
+7313	"Prejete donacije in darila od tujih fizičnih oseb"	0	0	7883	-0	-0
+732	"Donacije za odpravo posledic naravnih nesreč"	0	0	139083	-0	-0
+7320	"Donacije za odpravo posledic naravnih nesreč"	0	0	139083	-0	-0
+74	"TRANSFERNI PRIHODKI"	104870	0	103167	"98,38"	-0
+740	"Transferni prihodki iz drugih javnofinančnih institucij"	104870	0	103167	"98,38"	-0
+7400	"Prejeta sredstva iz državnega proračuna"	98123	0	96271	"98,11"	-0
+7402	"Prejeta sredstva iz skladov socialnega zavarovanja"	6747	0	6896	"102,20"	-0
+78	"PREJETA SREDSTVA IZ EVROPSKE UNIJE"	80364257	0	43836626	"54,55"	-0
+780	"Predpristopna sredstva Evropske unije"	21132740	0	10650923	"50,40"	-0
+7800	"Prejeta sredstva PHARE"	21132740	0	5994174	"28,36"	-0
+7801	"Prejeta sredstva ISPA"	0	0	1842137	-0	-0
+7802	"Prejeta sredstva SAPARD"	0	0	2814612	-0	-0
+781	"Prejeta sredstva iz proračuna EU za izvajanje skupne kmetijske politike"	11207800	0	5505067	"49,12"	-0
+7810	"Prejeta sredstva iz proračuna EU iz naslova tržnih ukrepov v kmetijstvu iz Evropskega kmetijskega jamstvenega in usmerjevalnega sklada - Jamstveni del (EAGGF - Guarantee Fund)"	3847800	0	16784	"0,44"	-0
+7811	"Prejeta sredstva iz proračuna EU iz naslova neposrednih plačil v kmetijstvu iz Evropskega kmetijskega jamstvenega in usmerjevalnega sklada - Jamstveni del (EAGGF - Guarantee Fund)"	0	0	412000	-0	-0
+7812	"Prejeta sredstva iz proračuna EU iz naslova programa razvoja podeželja iz Evropskega kmetijskega jamstvenega in usmerjevalnega sklada - Jamstveni del (EAGGF - Guarantee Fund)"	7360000	0	5076282	"68,97"	-0
+782	"Prejeta sredstva iz proračuna EU za strukturno politiko"	7697017	0	0	"0,00"	-0
+7820	"Prejeta sredstva iz proračuna EU iz Evropskega kmetijskega jamstvenega in usmerjevalnega sklada - Usmerjevalni del (EAGGF - Guidance Fund)"	7697017	0	0	"0,00"	-0
+783	"Prejeta sredstva iz proračuna EU za kohezijsko politiko"	6600000	0	0	"0,00"	-0
+7830	"Prejeta sredstva iz Kohezijskega sklada (CF)"	6600000	0	0	"0,00"	-0
+784	"Prejeta sredstva iz proračuna EU za izvajanje notranje politike"	9193500	0	0	"0,00"	-0
+7840	"Prejeta sredstva iz proračuna EU za Schengensko mejo"	9193500	0	0	"0,00"	-0
+785	"Prejeta sredstva iz proračuna EU iz naslova pavšalnih povračil"	24533200	0	27023750	"110,15"	-0
+7850	"Prejeta sredstva iz proračuna EU iz naslova pavšalnih povračil za krepitev denarnega toka"	16785900	0	18623309	"110,95"	-0
+7851	"Prejeta sredstva iz proračuna EU iz naslova pavšalnih povračil za proračunsko izravnavo"	7747300	0	8400441	"108,43"	-0
+786	"Ostala prejeta sredstva iz proračuna Evropske unije"	0	0	411160	-0	-0
+7860	"Ostala prejeta sredstva iz proračuna EU"	0	0	411160	-0	-0
+787	"Prejeta sredstva od drugih evropskih institucij"	0	0	245727	-0	-0
+7870	"Prejeta sredstva od drugih evropskih institucij"	0	0	245727	-0	-0
+"II."	"SKUPAJ ODHODKI (40+41+42+43+45)"	1647642649	1658585506	1595688919	"96,85"	"96,21"
+40	"TEKOČI ODHODKI"	464536114	467146989	453664065	"97,66"	"97,11"
+400	"Plače in drugi izdatki zaposlenim"	177096984	181037673	179690802	"101,46"	"99,26"
+4000	"Plače in dodatki"	148984697	152274315	151180897	"101,47"	"99,28"
+4001	"Regres za letni dopust"	5556186	5573061	5550254	"99,89"	"99,59"
+4002	"Povračila in nadomestila"	16410032	17217005	17144459	"104,48"	"99,58"
+4003	"Sredstva za delovno uspešnost"	3166715	3169702	3122781	"98,61"	"98,52"
+4004	"Sredstva za nadurno delo"	1701602	1474051	1424081	"83,69"	"96,61"
+4005	"Plače za delo nerezidentov po pogodbi"	2900	2	0	"0,00"	"0,00"
+4009	"Drugi izdatki zaposlenim"	1274853	1329538	1268331	"99,49"	"95,40"
+401	"Prispevki delodajalcev za socialno varnost"	32788112	33215490	32960833	"100,53"	"99,23"
+4010	"Prispevek za pokojninsko in invalidsko zavarovanje"	17894532	17749954	17615888	"98,44"	"99,24"
+4011	"Prispevek za zdravstveno zavarovanje"	10755198	11141202	11063647	"102,87"	"99,30"
+4012	"Prispevek za zaposlovanje"	138596	95022	91408	"65,95"	"96,20"
+4013	"Prispevek za starševsko varstvo"	153401	155214	152365	"99,33"	"98,16"
+4015	"Premije kolektivnega dodatnega pokojninskega zavarovanja, na podlagi ZKDPZJU"	3846385	4074098	4037524	"104,97"	"99,10"
+402	"Izdatki za blago in storitve"	155554453	154472994	142821527	"91,81"	"92,46"
+4020	"Pisarniški in splošni material in storitve"	25768991	22468107	20006620	"77,64"	"89,04"
+4021	"Posebni material in storitve"	36768694	34627493	31758272	"86,37"	"91,71"
+4022	"Energija, voda, komunalne storitve in komunikacije"	13294610	13038151	12408339	"93,33"	"95,17"
+4023	"Prevozni stroški in storitve"	7853291	8220891	7733597	"98,48"	"94,07"
+4024	"Izdatki za službena potovanja"	4496052	5146916	4288029	"95,37"	"83,31"
+4025	"Tekoče vzdrževanje"	19533635	20959956	19664070	"100,67"	"93,82"
+4026	"Poslovne najemnine in zakupnine"	12226996	11935193	11508180	"94,12"	"96,42"
+4027	"Kazni in odškodnine"	3069872	4971062	4856740	"158,21"	"97,70"
+4028	"Davek na izplačane plače"	9046053	9116886	9000675	"99,50"	"98,73"
+4029	"Drugi operativni odhodki"	23496259	23988341	21597004	"91,92"	"90,03"
+403	"Plačila domačih obresti"	58576487	58290527	58186012	"99,33"	"99,82"
+4031	"Plačila obresti od kreditov - poslovnim bankam"	9063773	6130773	6062845	"66,89"	"98,89"
+4032	"Plačila obresti od kreditov - drugim finančnim institucijam"	180000	129000	126236	"70,13"	"97,86"
+4033	"Plačila obresti od kreditov - drugim domačim kreditodajalcem"	101251	966251	948815	"937,09"	"98,20"
+4034	"Plačila obresti od vrednostnih papirjev izdanih na domačem trgu"	49231463	51064503	51048116	"103,69"	"99,97"
+404	"Plačila tujih obresti"	30835359	31078359	31029846	"100,63"	"99,84"
+4040	"Plačila obresti od kreditov - mednarodnim finančnim institucijam"	2909178	2589178	2586648	"88,91"	"99,90"
+4041	"Plačila obresti od kreditov - tujim vladam"	10291	11591	10556	"102,58"	"91,08"
+4042	"Plačila obresti od kreditov - tujim poslovnim bankam in finančnim institucijam"	1423722	1420722	1412818	"99,23"	"99,44"
+4044	"Plačila obresti od vrednostnih papirjev, izdanih na tujih trgih"	26492169	27056869	27019824	"101,99"	"99,86"
+409	"Rezerve"	9684718	9051946	8975045	"92,67"	"99,15"
+4090	"Splošna proračunska rezervacija"	6835702	76901	0	"0,00"	"0,00"
+4091	"Proračunska rezerva"	1800000	2297929	2297929	"127,66"	"100,00"
+4092	"Druge rezerve"	1049017	0	0	"0,00"	-0
+4093	"Sredstva za posebne namene"	0	6677116	6677116	-0	"100,00"
+41	"TEKOČI TRANSFERI"	958314148	981789787	962686989	"100,46"	"98,05"
+410	"Subvencije"	76259063	81693970	72659893	"95,28"	"88,94"
+4100	"Subvencije javnim podjetjem"	16758840	16273883	16106341	"96,11"	"98,97"
+4102	"Subvencije privatnim podjetjem in zasebnikom"	59500223	65420087	56553552	"95,05"	"86,45"
+411	"Transferi posameznikom in gospodinjstvom"	211833571	215514329	215009958	"101,50"	"99,77"
+4110	"Transferi nezaposlenim"	24298681	23636246	23364690	"96,16"	"98,85"
+4111	"Družinski prejemki in starševska nadomestila"	102090864	99080464	99063893	"97,04"	"99,98"
+4112	"Transferi za zagotavljanje socialne varnosti"	32538544	38763469	38730227	"119,03"	"99,91"
+4113	"Transferi vojnim invalidom, veteranom in žrtvam vojnega nasilja"	18240972	18261131	18234970	"99,97"	"99,86"
+4117	"Štipendije"	22233620	21977419	21907199	"98,53"	"99,68"
+4119	"Drugi transferi posameznikom"	12430890	13795599	13708979	"110,28"	"99,37"
+412	"Transferi neprofitnim organizacijam in ustanovam"	15640283	13123158	11604384	"74,20"	"88,43"
+4120	"Tekoči transferi neprofitnim organizacijam in ustanovam"	15640283	13123158	11604384	"74,20"	"88,43"
+413	"Drugi tekoči domači transferi"	651944487	668694097	660736591	"101,35"	"98,81"
+4130	"Tekoči transferi občinam"	40465025	39855264	39693347	"98,09"	"99,59"
+4131	"Tekoči transferi v sklade socialnega zavarovanja"	255919078	254145252	248101095	"96,95"	"97,62"
+4132	"Tekoči transferi v javne sklade"	27223430	3930460	3766609	"13,84"	"95,83"
+4133	"Tekoči transferi v javne zavode"	328240083	344564569	343394198	"104,62"	"99,66"
+4134	"Tekoči transferi v državni proračun"	96871	94046	94046	"97,08"	"100,00"
+4135	"Tekoča plačila drugim izvajalcem javnih služb, ki niso posredni proračunski uporabniki"	0	4869304	4774408	-0	"98,05"
+4136	"Tekoči transferi v javne agencije"	0	21235201	20912887	-0	"98,48"
+414	"Tekoči transferi v tujino"	2636744	2764233	2676163	"101,49"	"96,81"
+4140	"Tekoči transferi mednarodnim institucijam"	427210	536009	493221	"115,45"	"92,02"
+4141	"Tekoči transferi tujim vladam in vladnim institucijam"	18600	380	340	"1,83"	"89,44"
+4142	"Tekoči transferi neprofitnim organizacijam v tujini"	318160	319951	302296	"95,01"	"94,48"
+4143	"Drugi tekoči transferi v tujino"	1872773	1907893	1880306	"100,40"	"98,55"
+42	"INVESTICIJSKI ODHODKI"	93231513	78827601	69986493	"75,07"	"88,78"
+420	"Nakup in gradnja osnovnih sredstev"	93231513	78827601	69986493	"75,07"	"88,78"
+4200	"Nakup zgradb in prostorov"	4066453	3761375	2853527	"70,17"	"75,86"
+4201	"Nakup prevoznih sredstev"	883784	1891205	1734201	"196,22"	"91,70"
+4202	"Nakup opreme"	22272439	17328859	15425418	"69,26"	"89,02"
+4203	"Nakup drugih osnovnih sredstev"	70801	18423	13013	"18,38"	"70,63"
+4204	"Novogradnje, rekonstrukcije in adaptacije"	45778859	36812695	35040042	"76,54"	"95,18"
+4205	"Investicijsko vzdrževanje in obnove"	10682474	10111865	7636253	"71,48"	"75,52"
+4206	"Nakup zemljišč in naravnih bogastev"	1817214	2155885	1635111	"89,98"	"75,84"
+4207	"Nakup nematerialnega premoženja"	429504	485604	368518	"85,80"	"75,89"
+4208	"Študije o izvedljivosti projektov, projektna dokumentacija, nadzor in investicijski inženiring"	7224985	6261688	5280409	"73,09"	"84,33"
+4209	"Nakup blagovnih rezerv in intervencijskih zalog"	5000	0	0	"0,00"	-0
+43	"INVESTICIJSKI TRANSFERI"	86511674	89306272	68714531	"79,43"	"76,94"
+430	"***Investicijski transferi"	86511674	0	0	"0,00"	-0
+4300	"***Investicijski transferi drugim ravnem države"	18168795	0	0	"0,00"	-0
+4301	"***Investicijski transferi javnim skladom in agencijam"	4988430	0	0	"0,00"	-0
+4302	"***Investicijski transferi neprofitnim organizacijam in ustanovam"	1997686	0	0	"0,00"	-0
+4303	"***Investicijski transferi javnim podjetjem in družbam, ki so v lasti države ali občin"	37540826	0	0	"0,00"	-0
+4305	"***Investicijski transferi privatnim podjetjem"	10835210	0	0	"0,00"	-0
+4306	"***Investicijski transferi posameznikom in zasebnikom"	4189226	0	0	"0,00"	-0
+4307	"***Investicijski transferi javnim zavodom"	8767501	0	0	"0,00"	-0
+4308	"***Investicijski transferi v tujino"	24000	0	0	"0,00"	-0
+431	"Investicijski transferi pravnim in fizičnim osebam, ki niso proračunski uporabniki"	0	48358308	38746253	-0	"80,12"
+4310	"Investicijski transferi neprofitnim organizacijam in ustanovam"	0	1545964	1451156	-0	"93,87"
+4311	"Investicijski transferi javnim podjetjem in družbam, ki so v lasti države ali občin"	0	30778547	23790482	-0	"77,30"
+4313	"Investicijski transferi privatnim podjetjem"	0	11073705	8902792	-0	"80,40"
+4314	"Investicijski transferi posameznikom in zasebnikom"	0	4337521	3990338	-0	"92,00"
+4315	"Investicijski transferi drugim izvajalcem javnih služb, ki niso posredni proračunski uporabniki"	0	607621	596649	-0	"98,19"
+4316	"Investicijski transferi v tujino"	0	14950	14837	-0	"99,24"
+432	"Investicijski transferi proračunskim uporabnikom"	0	40947964	29968278	-0	"73,19"
+4320	"Investicijski transferi občinam"	0	16386672	13531228	-0	"82,57"
+4321	"Investicijski transferi javnim skladom in agencijam"	0	4544020	4108137	-0	"90,41"
+4322	"Investicijski transferi v državni proračun"	0	11354	0	-0	"0,00"
+4323	"Investicijski transferi javnim zavodom"	0	20005919	12328913	-0	"61,63"
+45	"PLAČILA SREDSTEV V PRORAČUN EVROPSKE UNIJE"	45049200	41514857	40636842	"90,21"	"97,89"
+450	"Plačila sredstev v proračun Evropske unije"	45049200	41514857	40636842	"90,21"	"97,89"
+4500	"Plačila tradicionalnih lastnih sredstev v proračun Evropske unije"	3603936	3603936	2953104	"81,94"	"81,94"
+4501	"Plačila sredstev v proračun EU iz naslova davka na dodano vrednost"	6607216	6242755	6015571	"91,05"	"96,36"
+4502	"Plačila sredstev v proračun EU iz naslova bruto nacionalnega dohodka"	31334221	27799878	27799878	"88,72"	"100,00"
+4503	"Plačila sredstev v proračun EU iz naslova popravka v korist Velike Britanije"	3503827	3868288	3868288	"110,40"	"100,00"
+"III."	"PRORAČUNSKI PRESEŽEK (PRORAČUNSKI PRIMANJKLJAJ) (I. - II.)"	-92436804	-0	-80400557	"86,98"	-0
+"III/1."	"PRIMARNI PRESEŽEK   (PRIMANJKLJAJ) (I. - 7102) - ( II. - 403 – 404)"	-11174958	-0	-322094	"2,88"	-0
+"IV."	"PREJETA VRAČILA DANIH POSOJIL IN PRODAJA KAPITALSKIH DELEŽEV (750+751+752)"	2592908	0	3923642	"151,32"	-0
+75	"PREJETA VRAČILA DANIH POSOJIL IN PRODAJA KAPITALSKIH DELEŽEV"	2592908	0	3923642	"151,32"	-0
+750	"Prejeta vračila danih posojil"	2292908	0	2630186	"114,71"	-0
+7500	"Prejeta vračila danih posojil od posameznikov in zasebnikov"	1758	0	21427	-0	-0
+7502	"Prejeta vračila danih posojil od javnih podjetij in družb, ki so v lasti države ali občin"	1445452	0	236220	"16,34"	-0
+7503	"Prejeta vračila danih posojil - od finančnih institucij"	0	0	1217881	-0	-0
+7504	"Prejeta vračila danih posojil od privatnih podjetij"	845698	0	1154657	"136,53"	-0
+751	"Prodaja kapitalskih deležev"	0	0	4523	-0	-0
+7511	"Sredstva, pridobljena s prodajo kapitalskih deležev v finančnih institucijah"	0	0	4523	-0	-0
+752	"Kupnine iz naslova privatizacije"	300000	0	1288934	"429,64"	-0
+7520	"Sredstva kupnin iz naslova privatizacije"	300000	0	1288934	"429,64"	-0
+"V."	"DANA POSOJILA IN POVEČANJE KAPITALSKIH DELEŽEV (440+441+442)"	13797809	16496251	13519275	"97,98"	"81,95"
+44	"DANA POSOJILA IN POVEČANJE KAPITALSKIH DELEŽEV"	13797809	16496251	13519275	"97,98"	"81,95"
+440	"Dana posojila"	4373009	4416957	2518777	"57,60"	"57,03"
+4404	"Dana posojila privatnim podjetjem"	4373009	2106957	601715	"13,76"	"28,56"
+4409	"Plačila zapadlih poroštev"	0	2310000	1917062	-0	"82,99"
+441	"Povečanje kapitalskih deležev in naložb"	7624800	7736400	7731626	"101,40"	"99,94"
+4410	"Povečanje kapitalskih deležev v javnih podjetjih in družbam, ki so v lasti države ali občin"	5362900	5368034	5368034	"100,10"	"100,00"
+4412	"Povečanje kapitalskih deležev v privatnih podjetjih"	122900	115866	115833	"94,25"	"99,97"
+4414	"Povečanje kapitalskih deležev v tujino"	2139000	2249000	2244260	"104,92"	"99,79"
+4415	"Povečanje drugih finančnih naložb"	0	3500	3500	-0	"100,00"
+442	"Poraba sredstev kupnin iz naslova privatizacije"	300000	2842894	1768872	"589,62"	"62,22"
+4420	"Dana posojila iz sredstev kupnin"	72000	978790	171223	"237,81"	"17,49"
+4421	"Sredstva kupnin, razporejena v javne sklade in agencije"	210000	902254	678920	"323,30"	"75,25"
+4422	"Povečanje kapitalskih deležev države iz sredstev kupnin"	18000	961850	918728	-0	"95,52"
+443	"Povečanje namenskega premoženja v javnih skladih in drugih pravnih osebah javnega prava, ki imajo premoženje v svoji lasti"	1500000	1500000	1500000	"100,00"	"100,00"
+4430	"Povečanje  namenskega premoženja v javnih skladih"	1500000	1500000	1500000	"100,00"	"100,00"
+"VI."	"PREJETA MINUS DANA POSOJILA IN SPREMEMBE KAPITALSKIH DELEŽEV (IV. - V.)"	-11204901	-0	-9595633	"85,64"	-0
+"VII."	"ZADOLŽEVANJE (500+501)"	293310285	0	264010407	"90,01"	-0
+50	"ZADOLŽEVANJE"	293310285	0	264010407	"90,01"	-0
+500	"Domače zadolževanje"	293310285	0	253648859	"86,48"	-0
+5000	"Najeti krediti pri Banki Slovenije"	293310285	0	0	"0,00"	-0
+5001	"Najeti krediti pri poslovnih bankah"	0	0	14750000	-0	-0
+5004	"Sredstva, pridobljena z izdajo vrednostnih papirjev na domačem trgu"	0	0	238898859	-0	-0
+501	"Zadolževanje v tujini"	0	0	10361548	-0	-0
+5010	"Najeti krediti pri mednarodnih finančnih institucijah"	0	0	10361548	-0	-0
+"VIII."	"ODPLAČILA DOLGA (550+551)"	189668579	269456137	185399676	"97,75"	"68,81"
+55	"ODPLAČILA DOLGA"	189668579	269456137	185399676	"97,75"	"68,81"
+550	"Odplačila domačega dolga"	129380329	208202886	124412716	"96,16"	"59,76"
+5501	"Odplačila kreditov poslovnim bankam"	22809008	22876008	22808378	"100,00"	"99,70"
+5504	"Odplačila glavnice vrednostnih papirjev, izdanih na domačem trgu"	106571321	185326878	101604338	"95,34"	"54,82"
+551	"Odplačila dolga v tujino"	60288250	61253250	60986960	"101,16"	"99,57"
+5510	"Odplačila dolga mednarodnim finančnim institucijam"	7238267	7137267	7100942	"98,10"	"99,49"
+5511	"Odplačila dolga tujim vladam"	761035	786035	783771	"102,99"	"99,71"
+5512	"Odplačila dolga tujim poslovnim bankam in finančnim institucijam"	1629428	1650428	1640282	"100,67"	"99,39"
+5514	"Odplačila glavnice vrednostnih papirjev, izdanih na tujih trgih"	50659521	51679521	51461965	"101,58"	"99,58"
+"IX."	"SPREMEMBA STANJA SREDSTEV NA RAČUNU (I.+IV.+VII.-II.-V.-VIII.)"	0	-0	-11385458	-0	-0
+"X."	"NETO  ZADOLŽEVANJE (VII.-VIII.)"	103641706	-0	78610732	"75,85"	-0
+"XI."	"NETO FINANCIRANJE (VI.+VII.-VIII.-IX)"	92436804	-0	80400557	"86,98"	-0
