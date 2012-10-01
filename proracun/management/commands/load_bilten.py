@@ -123,7 +123,7 @@ class Command(BaseCommand):
 				) AS a WHERE a.proracun_id = b.proracun_id AND b.sifra = 57
 			) AS N WHERE proracun_postavka.proracun_id = N.proracun_id AND proracun_postavka.sifra = 57;''')
 			
-			cur.execute('''UPDATE proracun_postavka SET naziv = naziv || ' (' || sifra || ')', naziv_en = naziv_en || ' (' || sifra || ')', sifra = regexp_replace(sifra::text, '^40([34])', '57\\\\1')::integer WHERE sifra::text ~ E'^40[34]';''')
+			cur.execute('''UPDATE proracun_postavka SET naziv = naziv || ' (' || sifra || ')', naziv_en = naziv_en || ' (' || sifra || ')', sifra = regexp_replace(sifra::text, '^40([34])', E'57\\\\1')::integer WHERE sifra::text ~ E'^40[34]';''')
 			cur.execute('''UPDATE proracun_postavka SET znesek = 0.0 WHERE id IN (SELECT a.id FROM proracun_postavka a, proracun_proracun b WHERE a.proracun_id = b.id AND sifra::text ~ E'^50.$');''')
 			
 		# end function body
