@@ -30,8 +30,9 @@ class Command(BaseCommand):
 			
 			leta2 = []
 			for mesec, leto in zip(meseci, leta):
-				if not mesec.strip() and re.match('^\d{4}$', leto.replace(' ', '')):
-					leta2.append(int(leto.replace(' ', '')))
+				cleanleto = leto.replace(' ', '').replace('*', '')
+				if not mesec.strip() and re.match('^\d{4}$', cleanleto):
+					leta2.append(int(cleanleto))
 				else:
 					leta2.append(None)
 			
