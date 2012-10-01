@@ -10,9 +10,10 @@ Pomen indeksov:
 	meseca glede na enako obdobje v preteklem letu.
 
 
-Zajeto obdobje: januar 1991 - avgust 2012
+Zajeto obdobje: januar 1991 - september 2012
 
 	Meseèni indeks	Letni indeks	Povpreèni letni<br>indeks	
+september 2012	101,1	103,3	102,6	
 avgust 2012	100,7	102,9	102,5	
 julij 2012	99,0	102,4	102,5	
 junij 2012	99,4	102,3	102,5	
