@@ -30,8 +30,9 @@ class Command(BaseCommand):
 			
 			leta2 = []
 			for mesec, leto in zip(meseci, leta):
-				if not mesec.strip() and re.match('^\d{4}$', leto.replace(' ', '')):
-					leta2.append(int(leto.replace(' ', '')))
+				cleanleto = leto.replace(' ', '').replace('*', '')
+				if not mesec.strip() and re.match('^\d{4}$', cleanleto):
+					leta2.append(int(cleanleto))
 				else:
 					leta2.append(None)
 			
@@ -72,7 +73,7 @@ class Command(BaseCommand):
 					sifra = 0
 				naziv = rec[2].decode('utf-8')
 				naziv_en = rec[3].decode('utf-8')
-				print 'Loading:', naziv
+				print 'Loading:', sifra, naziv
 				pst_tmpl = {
 					'sifra': sifra,
 					'naziv': naziv,
@@ -111,20 +112,25 @@ class Command(BaseCommand):
 			from django.db import connection
 			cur = connection.cursor()
 			
+			# odsteje odplacila dolga iz tekocih transferov
 			cur.execute('''UPDATE proracun_postavka SET znesek = proracun_postavka.znesek - N.sum FROM (
 				SELECT a.sum, a.proracun_id, b.znesek FROM proracun_postavka AS b, (
 					SELECT proracun_id, sum(znesek) FROM proracun_postavka WHERE sifra IN (403,404) GROUP BY proracun_id
 				) AS a WHERE a.proracun_id = b.proracun_id AND b.sifra = 40
 			) AS N WHERE proracun_postavka.proracun_id = N.proracun_id AND proracun_postavka.sifra = 40;''')
 			
+			# pristeje odplacila dolga k zadolzevanju
 			cur.execute('''UPDATE proracun_postavka SET znesek = proracun_postavka.znesek + N.sum FROM (
 				SELECT a.sum, a.proracun_id, b.znesek FROM proracun_postavka AS b, (
 					SELECT proracun_id, sum(znesek) FROM proracun_postavka WHERE sifra in (403,404) GROUP BY proracun_id
 				) AS a WHERE a.proracun_id = b.proracun_id AND b.sifra = 57
 			) AS N WHERE proracun_postavka.proracun_id = N.proracun_id AND proracun_postavka.sifra = 57;''')
 			
-			cur.execute('''UPDATE proracun_postavka SET naziv = naziv || ' (' || sifra || ')', naziv_en = naziv_en || ' (' || sifra || ')', sifra = regexp_replace(sifra::text, '^40([34])', '57\\\\1')::integer WHERE sifra::text ~ E'^40[34]';''')
-			cur.execute('''UPDATE proracun_postavka SET znesek = 0.0 WHERE id IN (SELECT a.id FROM proracun_postavka a, proracun_proracun b WHERE a.proracun_id = b.id AND sifra::text ~ E'^50.$');''')
+			# Zamenja sifro presifriranih postavk
+			cur.execute('''UPDATE proracun_postavka SET naziv = naziv || ' (' || sifra || ')', naziv_en = naziv_en || ' (' || sifra || ')', sifra = regexp_replace(sifra::text, '^40([34])', E'57\\\\1')::integer WHERE sifra::text ~ E'^40[34]';''')
+			
+			# Zakomentiral, ker ocitno dela probleme pri importu xls/csv biltena
+			#cur.execute('''UPDATE proracun_postavka SET znesek = 0.0 WHERE id IN (SELECT a.id FROM proracun_postavka a, proracun_proracun b WHERE a.proracun_id = b.id AND sifra::text ~ E'^50.$');''')
 			
 		# end function body
 		return go()
