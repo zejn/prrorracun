@@ -20,3 +20,21 @@ Poglej
  - Revalorizirano glede na inflacijo: http://localhost:8000/a/p/prihodki/1/
  - Revalorizirano glede na rast BDP: http://localhost:8000/a/p/prihodki/2/
 
+
+
+Posodabljanje
+-------------
+
+
+1. Za posodabljanje je najprej potrebno posodobit podatke o inflaciji in indeksu BDP.
+
+ rm inflacija.txt
+ python inflacija.py
+
+ rm bdpindex.txt
+ python bdpindex.py
+
+2. Pridobi nove podatke o državnem proračunu v XLS obliki.
+
+3. 
+

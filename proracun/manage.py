@@ -1,6 +1,4 @@
 #!/usr/bin/python
-try: import django13
-except ImportError: pass
 
 from django.core.management import execute_manager
 import imp
