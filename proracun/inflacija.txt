@@ -10,9 +10,30 @@ Pomen indeksov:
 	meseca glede na enako obdobje v preteklem letu.
 
 
-Zajeto obdobje: januar 1991 - september 2012
+Zajeto obdobje: januar 1991 - junij 2014
 
 	Meseèni indeks	Letni indeks	Povpreèni letni<br>indeks	
+junij 2014	100,1	100,8	100,6	
+maj 2014	100,6	100,7	100,5	
+april 2014	100,5	100,4	100,5	
+marec 2014	100,8	100,6	100,5	
+februar 2014	100,1	100,1	100,5	
+januar 2014	99,4	100,8	100,8	
+december 2013	99,1	100,7	101,8	
+november 2013	99,9	101,3	101,9	
+oktober 2013	100,0	101,3	101,9	
+september 2013	100,3	101,4	102,0	
+avgust 2013	100,3	102,2	102,1	
+julij 2013	99,7	102,6	102,0	
+junij 2013	100,0	101,9	101,9	
+maj 2013	100,3	101,2	102,0	
+april 2013	100,7	101,5	102,1	
+marec 2013	100,3	102,0	102,4	
+februar 2013	100,8	102,7	102,5	
+januar 2013	99,2	102,4	102,4	
+december 2012	99,7	102,7	102,6	
+november 2012	99,9	102,3	102,6	
+oktober 2012	100,1	102,7	102,6	
 september 2012	101,1	103,3	102,6	
 avgust 2012	100,7	102,9	102,5	
 julij 2012	99,0	102,4	102,5	
