@@ -12,18 +12,62 @@ class Command(BaseCommand):
 		def go():
 			import re, os
 			import csv
+			import xlrd
+			import messytables
+			import xypath
 			import datetime
 			from django.core.files import File
 			from django.utils._os import safe_join
 			from proracun.models import Proracun, Postavka, TIPI_PRORACUNOV
+			import tempfile
 			
+			filename = args[0]
+			
+			print 'Opening XLS table ...'
 			try:
-				rdr = csv.reader(open(args[0]))
+				table = xypath.Table.from_filename(filename, 'MESPROR')
 			except IndexError:
 				raise CommandError("please pass xls converted to csv")
 			
-			datadir = os.path.dirname(args[0])
+			datadir = os.path.dirname(filename)
 			
+			print 'Find offset of lines...'
+			a = table.filter('v EUR').assert_one()
+			
+			leta = a.shift(1).fill(xypath.RIGHT)
+			len1 = len(leta)
+			
+			leta = [isinstance(i.value, basestring) and int(i.value.replace(' ', '')) or i.value for i in leta]
+			leta = [(isinstance(i, float) and i % 1 == 0) and int(i) or i for i in leta]
+			len2 = len([i for i in leta if i >= 1992])
+			
+			assert len1 == len2
+			
+			print 'OK, %s lines.' % (a.y - 1,)
+			
+			# OK, now skip a.y - 1 lines and save as CSV
+			print 'Save to CSV ...'
+			tf = tempfile.NamedTemporaryFile(prefix='proracun', suffix='.csv')
+			
+			wb = xlrd.open_workbook(filename)
+			sh = wb.sheet_by_index(0)
+			
+			wrr = csv.writer(tf)
+			
+			for n in range(sh.nrows):
+				if n < a.y - 1:
+					continue
+				else:
+					row = sh.row_values(n)
+					row2 = [isinstance(i, basestring) and i.encode('utf-8') or i for i in row]
+					wrr.writerow(row2)
+			
+			tf.flush()
+			tf.seek(0)
+			
+			print 'Saved CSV to %s ...' % (tf.name,)
+			
+			rdr = csv.reader(open(tf.name))
 			
 			meseci = rdr.next()
 			leta = rdr.next()
@@ -31,6 +75,9 @@ class Command(BaseCommand):
 			leta2 = []
 			for mesec, leto in zip(meseci, leta):
 				cleanleto = leto.replace(' ', '').replace('*', '')
+				if re.match('^\d{4}\.0+$', cleanleto):
+					cleanleto = str(int(float(cleanleto)))
+				
 				if not mesec.strip() and re.match('^\d{4}$', cleanleto):
 					leta2.append(int(cleanleto))
 				else:
@@ -61,7 +108,7 @@ class Command(BaseCommand):
 			def clean_znesek(z):
 				if z.strip() in ('', '\xe2\x80\xa6', '...'):
 					return 0
-				return int(z.replace('.',''))
+				return int(float(z))
 			
 			for rec in rdr:
 				if not any(rec):
