@@ -11,6 +11,9 @@ rdr = csv.reader(open(name))
 w = csv.writer(open(name + "2", "w"))
 
 for r in rdr:
+	if not r:
+		# empty line, happens at the end
+		continue
 	rec = [r[0], r[1]] +  r[2].split(' ')
 	print rec
 	w.writerow(rec)
