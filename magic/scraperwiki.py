@@ -23,7 +23,7 @@ def __convert(pdfdata, get_cmd):
 def pdf2xml(pdfdata):
     
     def get_cmd(infile, outfile):
-        return '/usr/local/bin/pdf2xml "%s" > "%s"' % (infile, outfile)
+        return 'pdf2xml "%s" > "%s"' % (infile, outfile)
     
     return __convert(pdfdata, get_cmd)
 
