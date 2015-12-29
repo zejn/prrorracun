@@ -78,8 +78,7 @@
 783,"Prejeta sredstva iz proračuna EU iz kohezijskega sklada",203904030,0,99363416,"48,73","-"
 7830,"Prejeta sredstva iz Kohezijskega sklada (CF)",203904030,0,99363416,"48,73","-"
 784,"Prejeta sredstva iz proračuna EU za izvajanje centraliziranih in drugih programov EU",17143264,0,12189182,"71,10","-"
-7841,"Druga prejeta sredstva iz proračuna EU za izvajanje notranjih politik EU",5711944,0,8036143,"140,69","-"
-2004,"- 2006",,,,,
+7841,"Druga prejeta sredstva iz proračuna EU za izvajanje notranjih politik EU 2004 - 2006",5711944,0,8036143,"140,69","-"
 7842,"Prejeta sredstva iz proračuna EU iz naslova Konkurenčnost za rast in zaposlovanje",4347321,0,416850,"9,59","-"
 7843,"Prejeta sredstva iz proračuna EU iz naslova Državljanstvo, svoboda, varnost in pravica",7083999,0,3736190,"52,74","-"
 786,"Ostala prejeta sredstva iz proračuna Evropske unije",2620401,0,3129559,"119,43","-"
@@ -183,8 +182,8 @@
 4502,"Plačila sredstev v proračun EU iz naslova bruto nacionalnega dohodka",283964010,258233724,258233723,"90,94","100,00"
 4503,"Plačila sredstev v proračun EU iz naslova popravka v korist Združenega Kraljestva",19643216,17869087,17869086,"90,97","100,00"
 4504,"Plačila sredstev v proračun EU iz naslova popravkov BND vira v korist Kraljevin Nizozemske in Švedske",2488856,2488856,2324155,"93,38","93,38"
-,"III. PRORAČUNSKI PRESEŽEK -1.767.517.842 (PRORAČUNSKI PRIMANJKLJAJ) (I. - II.) (Skupaj prihodki minus skupaj odhodki)","-",-1730612827,"97,91","-",
-,"III/1. PRIMARNI PRESEŽEK   (PRIMANJKLJAJ) -1.329.937.174 (I. - 7102) - ( II. - 403 - 404) (Skupaj prihodki brez prihodkov od obresti minus skupaj odhodki brez plačil obresti)","-",-1299328841,"97,70","-",
+,"III. PRORAČUNSKI PRESEŽEK -1.767.517.842 (PRORAČUNSKI PRIMANJKLJAJ) (I. - II.) (Skupaj prihodki minus skupaj odhodki)",1767517842,"-",-1730612827,"97,91","-"
+,"III/1. PRIMARNI PRESEŽEK   (PRIMANJKLJAJ) -1.329.937.174 (I. - 7102) - ( II. - 403 - 404) (Skupaj prihodki brez prihodkov od obresti minus skupaj odhodki brez plačil obresti)",1329937174,"-",-1299328841,"97,70","-"
 ,"IV. PREJETA VRAČILA DANIH POSOJIL IN PRODAJA KAPITALSKIH DELEŽEV (750+751+752)",63710000,0,13121598,"20,60","-"
 75,"PREJETA VRAČILA DANIH POSOJIL IN PRODAJA KAPITALSKIH DELEŽEV",63710000,0,13121598,"20,60","-"
 750,"Prejeta vračila danih posojil",12810000,0,10389060,"81,10","-"
