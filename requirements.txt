@@ -2,3 +2,4 @@ Django==1.4.10
 psycopg2==2.5.3
 simplejson==3.5.3
 messytables==0.13.0
+pypdf2xml
