@@ -3,12 +3,12 @@
 import csv
 import re
 import sys
-import urllib
 
 from StringIO import StringIO
 import scraperwiki
 import lxml.etree, lxml.html
 from postavke import load_postavke
+
 
 def splitrow(a):
     m = re.match('^(\d+)?(.*)$', a)
@@ -19,6 +19,8 @@ def splitrow(a):
 
 def clean_text(s):
     for i in [
+        ('&#173;', u'-'.encode('utf-8')),
+        ('&#202;', u' '.encode('utf-8')),
         ('&#269;', u'č'.encode('utf-8')),
         ('&#353;', u'š'.encode('utf-8')),
         ('&#382;', u'ž'.encode('utf-8')),
@@ -66,7 +68,7 @@ for pagenum, page in enumerate(root):
 
 pdata = load_postavke()
 records = []
-splitline = 300
+splitline = 220
 # split into cols
 for line in rows:
     firstcol = []
