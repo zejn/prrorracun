@@ -27,7 +27,9 @@ for line in reader:
     
     if line[2].startswith('Stran '):
         skipping = True
-    if line[2].startswith('prora'):
+    if line[2].startswith('prora') or line[2].startswith('Znesek'):
+        # 'prora' velja za ZR
+        # 'Znesek' velja za SP
         skipping = False
         continue
     
@@ -36,7 +38,7 @@ for line in reader:
     
     if line[0] == line[2] == '':
         if prev is not None:
-            #print 'MERGING'
+            #wrow(['MERGING'])
             prev[1] = prev[1] + ' ' + line[1]
             
             if step == 4:
